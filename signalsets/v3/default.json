@@ -1,4 +1,66 @@
 { "commands": [
-
+{ "hdr": "70B", "fcm1": true, "dbg": true, "cmd": {"22": "18A0"}, "freq": 30,
+  "signals": [
+    {"id": "AUDI_TP_FR", "path": "Tires", "fmt": {"bix": 40, "len": 8, "max": 6.375, "div": 40, "unit": "bars" }, "name": "Front right tire pressure", "suggestedMetric": "frontRightTirePressure"},
+    {"id": "AUDI_TP_FL", "path": "Tires", "fmt": {"bix": 40, "len": 8, "max": 6.375, "div": 40, "unit": "bars" }, "name": "Front left tire pressure",  "suggestedMetric": "frontLeftTirePressure"},
+    {"id": "AUDI_TP_RL", "path": "Tires", "fmt": {"bix": 40, "len": 8, "max": 6.375, "div": 40, "unit": "bars" }, "name": "Rear left tire pressure",   "suggestedMetric": "rearLeftTirePressure"},
+    {"id": "AUDI_TP_RR", "path": "Tires", "fmt": {"bix": 40, "len": 8, "max": 6.375, "div": 40, "unit": "bars" }, "name": "Rear right tire pressure",  "suggestedMetric": "rearRightTirePressure"}
+  ]},
+{ "hdr": "710", "dbg": true, "cmd": {"22": "2A0A"}, "freq": 30,
+  "signals": [
+    {"id": "AUDI_ODO", "path": "Trips", "fmt": { "len": 32, "max": 255, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
+  ]},
+{ "hdr": "713", "dbg": true, "cmd": {"22": "2B1B"}, "freq": 30,
+  "signals": [
+    {"id": "AUDI_TIRE_FL_SPD", "path": "Movement", "fmt": { "len": 16, "max": 1000, "div": 10, "unit": "kilometersPerHour" }, "name": "Front left wheel speed"},
+    {"id": "AUDI_TIRE_FR_SPD", "path": "Movement", "fmt": { "len": 16, "max": 1000, "div": 10, "unit": "kilometersPerHour" }, "name": "Front right wheel speed"},
+    {"id": "AUDI_TIRE_RL_SPD", "path": "Movement", "fmt": { "len": 16, "max": 1000, "div": 10, "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"},
+    {"id": "AUDI_TIRE_RR_SPD", "path": "Movement", "fmt": { "len": 16, "max": 1000, "div": 10, "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"}
+  ]},
+{ "hdr": "714", "dbg": true, "cmd": {"22": "202F"}, "freq": 30,
+  "signals": [
+    {"id": "AUDI_EOT",      "path": "Engine",  "fmt": {            "len": 8,  "max": 255,               "add": -58, "unit": "scalar"     }, "name": "Engine oil temperature"},
+    {"id": "AUDI_ODO_DASH", "path": "Trips",   "fmt": {            "len": 24, "max": 255,                           "unit": "kilometers" }, "name": "Odometer (dash)",          "suggestedMetric": "odometer"},
+    {"id": "AUDI_RANGE",    "path": "Trips",   "fmt": {            "len": 16, "max": 255,                           "unit": "kilometers" }, "name": "Range remaining",          "suggestedMetric": "fuelRange"},
+    {"id": "AUDI_FLV",      "path": "Fuel",    "fmt": {            "len": 16, "max": 255,    "div": 8,              "unit": "liters"     }, "name": "Fuel remaining",           "suggestedMetric": "fuelTankLevel"},
+    {"id": "AUDI_IAT",      "path": "Climate", "fmt": {            "len": 16, "max": 255,    "div": 10,             "unit": "celsius"    }, "name": "Interior air temperature"},
+    {"id": "AUDI_FLI_VOL",  "path": "Fuel",    "fmt": {"bix": 336, "len": 16, "max": 6553.5, "div": 10,             "unit": "liters"     }, "name": "Fuel level (volume)"}
+  ]},
+{ "hdr": "715", "dbg": true, "cmd": {"22": "2353"}, "freq": 3600,
+  "signals": [
+    {"id": "AUDI_CRSH_FRONT",      "path": "Trips", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Crashes, front"},
+    {"id": "AUDI_CRASH_CNT_DRVR",  "path": "Stats", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Crashes, driver side"},
+    {"id": "AUDI_CRASH_CNT_PSNGR", "path": "Stats", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Crashes, passenger side"},
+    {"id": "AUDI_CRASH_CNT_REAR",  "path": "Stats", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Crashes, rear"},
+    {"id": "AUDI_CRASH_CNT_ROLL",  "path": "Stats", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Crashes, rollover"}
+  ]},
+{ "hdr": "746", "fcm1": true, "dbg": true, "cmd": {"22": "27C4"}, "freq": 30,
+  "signals": [
+    {"id": "AUDI_WNDSHLD_TEMP", "path": "Climate", "fmt": { "len": 8, "max": 108.08, "min": -38.8, "mul": 0.576, "add": -38.8, "unit": "celsius" }, "name": "Windshield temperature"}
+  ]},
+{ "hdr": "7E0", "dbg": true, "cmd": {"22": "10E0"}, "freq": 30,
+  "signals": [
+    {"id": "AUDI_ODO_3",     "path": "Trips",  "fmt": { "len": 32, "max": 4294967295,             "unit": "kilometers"  }, "name": "Odometer (alternative 2)", "suggestedMetric": "odometer"},
+    {"id": "AUDI_OIL_LEVEL", "path": "Engine", "fmt": { "len": 16, "max": 262,        "div": 250, "unit": "unknown"     }, "name": "Oil level"},
+    {"id": "AUDI_OIL_MAX",   "path": "Fluids", "fmt": { "len": 16, "max": 262,        "div": 250, "unit": "centimeters" }, "name": "Oil level (max)"},
+    {"id": "AUDI_OIL_MIN",   "path": "Fluids", "fmt": { "len": 16, "max": 262,        "div": 250, "unit": "centimeters" }, "name": "Oil level (min)"},
+    {"id": "AUDI_ODO_2",     "path": "Trips",  "fmt": { "len": 32, "max": 4294967295,             "unit": "kilometers"  }, "name": "Odometer (alternative)",   "suggestedMetric": "odometer"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"01": "2F"}, "freq": 5,
+  "signals": [
+    {"id": "AUDI_RANGE", "path": "Fuel.Generic", "fmt": { "len": 8, "max": 1000, "mul": 1000, "div": 255, "nullmin": 0, "unit": "kilometers" }, "name": "Range remaining", "suggestedMetric": "fuelRange"}
+  ]},
+{ "hdr": "7E1", "dbg": true, "cmd": {"22": "0302"}, "freq": 900,
+  "signals": [
+    {"id": "AUDI_DRIVE_TIME",        "path": "Stats",        "fmt": { "len": 16, "max": 16383, "div": 4,   "unit": "hours"             }, "name": "Total drive time"},
+    {"id": "AUDI_DRIVE_TIME_ECO",    "path": "Stats",        "fmt": { "len": 8,  "max": 100,   "div": 2.5, "unit": "percent"           }, "name": "Driving time (eco)",      "description": "Value may be wrong, needs more validation. Proportion of time spent driving in eco mode"},
+    {"id": "AUDI_DRIVE_TIME_SPORT",  "path": "Stats",        "fmt": { "len": 8,  "max": 100,   "div": 2.5, "unit": "percent"           }, "name": "Driving time (sport)",    "description": "Value may be wrong, needs more validation. Proportion of time spent driving in sport mode"},
+    {"id": "AUDI_DRIVE_TIME_MANUAL", "path": "Stats",        "fmt": { "len": 8,  "max": 100,   "div": 2.5, "unit": "percent"           }, "name": "Driving time (manual)",   "description": "Value may be wrong, needs more validation. Proportion of time spent driving in manual mode"},
+    {"id": "AUDI_GEAR",              "path": "Transmission", "fmt": { "len": 8,  "max": 255,               "unit": "scalar"            }, "name": "Gear"},
+    {"id": "AUDI_TIRE_FL_SPD",       "path": "Movement",     "fmt": { "len": 16, "max": 1000,  "div": 10,  "unit": "kilometersPerHour" }, "name": "Front left wheel speed"},
+    {"id": "AUDI_TIRE_FR_SPD",       "path": "Movement",     "fmt": { "len": 16, "max": 1000,  "div": 10,  "unit": "kilometersPerHour" }, "name": "Front right wheel speed"},
+    {"id": "AUDI_TIRE_RL_SPD",       "path": "Movement",     "fmt": { "len": 16, "max": 1000,  "div": 10,  "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"},
+    {"id": "AUDI_TIRE_RR_SPD",       "path": "Movement",     "fmt": { "len": 16, "max": 1000,  "div": 10,  "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"}
+  ]}
 ]
 }
