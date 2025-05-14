@@ -1,9 +1,19 @@
 { "commands": [
 { "hdr": "70B", "fcm1": true, "dbg": true, "cmd": {"22": "18A0"}, "freq": 30,
   "signals": [
-    {"id": "AUDI_TP_FR", "path": "Tires", "fmt": {"bix": 40, "len": 8, "max": 6.375, "div": 40, "unit": "bars" }, "name": "Front right tire pressure", "suggestedMetric": "frontRightTirePressure"},
-    {"id": "AUDI_TP_1",  "path": "Tires", "fmt": {"bix": 48, "len": 8, "max": 25.5,  "div": 10, "unit": "bars" }, "name": "Tire #1 pressure"},
+    {"id": "AUDI_TP_FR", "path": "Tires", "fmt": {"bix": 40, "len": 8, "max": 6.375, "div": 40,             "unit": "bars"    }, "name": "Front right tire pressure", "suggestedMetric": "frontRightTirePressure"},
+    {"id": "AUDI_TP_1",  "path": "Tires", "fmt": {"bix": 48, "len": 8, "max": 25.5,  "div": 10,             "unit": "bars"    }, "name": "Tire #1 pressure"},
+    {"id": "AUDI_TT_1",  "path": "Tires", "fmt": {"bix": 56, "len": 8, "max": 100,              "add": -40, "unit": "celsius" }, "name": "Tire 1 temperature"},
+    {"id": "AUDI_TPS_1", "path": "Tires", "fmt": {"bix": 64, "len": 8, "max": 25.5,  "div": 10,             "unit": "bars"    }, "name": "Tire 1 specified pressure"},
+    {"id": "AUDI_TPW_1", "path": "Tires", "fmt": {"bix": 72, "len": 8, "max": 25.5,  "div": 10,             "unit": "bars"    }, "name": "Tire 1 warning pressure"},
     {"id": "AUDI_TID_1", "path": "Tires", "name": "Tire #1 position", "fmt": {"bix": 32, "len": 8, "map": {
+          "0": { "description": "Front left",  "value": "FL" },
+          "1": { "description": "Front right", "value": "FR" },
+          "2": { "description": "Rear left",   "value": "RL" },
+          "3": { "description": "Rear right",  "value": "RR" }
+        }}
+    },
+    {"id": "AUDI_TPOS_1", "path": "Tires", "name": "Tire 1 position", "fmt": {"bix": 32, "len": 8, "map": {
           "0": { "description": "Front left",  "value": "FL" },
           "1": { "description": "Front right", "value": "FR" },
           "2": { "description": "Rear left",   "value": "RL" },
@@ -13,9 +23,19 @@
   ]},
 { "hdr": "70B", "fcm1": true, "dbg": true, "cmd": {"22": "18A1"}, "freq": 30,
   "signals": [
-    {"id": "AUDI_TP_FL", "path": "Tires", "fmt": {"bix": 40, "len": 8, "max": 6.375, "div": 40, "unit": "bars" }, "name": "Front left tire pressure", "suggestedMetric": "frontLeftTirePressure"},
-    {"id": "AUDI_TP_2",  "path": "Tires", "fmt": {"bix": 48, "len": 8, "max": 25.5,  "div": 10, "unit": "bars" }, "name": "Tire #2 pressure"},
+    {"id": "AUDI_TP_FL", "path": "Tires", "fmt": {"bix": 40, "len": 8, "max": 6.375, "div": 40,             "unit": "bars"    }, "name": "Front left tire pressure",  "suggestedMetric": "frontLeftTirePressure"},
+    {"id": "AUDI_TP_2",  "path": "Tires", "fmt": {"bix": 48, "len": 8, "max": 25.5,  "div": 10,             "unit": "bars"    }, "name": "Tire #2 pressure"},
+    {"id": "AUDI_TT_2",  "path": "Tires", "fmt": {"bix": 56, "len": 8, "max": 100,              "add": -40, "unit": "celsius" }, "name": "Tire 2 temperature"},
+    {"id": "AUDI_TPS_2", "path": "Tires", "fmt": {"bix": 64, "len": 8, "max": 25.5,  "div": 10,             "unit": "bars"    }, "name": "Tire 2 specified pressure"},
+    {"id": "AUDI_TPW_2", "path": "Tires", "fmt": {"bix": 72, "len": 8, "max": 25.5,  "div": 10,             "unit": "bars"    }, "name": "Tire 2 warning pressure"},
     {"id": "AUDI_TID_2", "path": "Tires", "name": "Tire #2 position", "fmt": {"bix": 32, "len": 8, "map": {
+          "0": { "description": "Front left",  "value": "FL" },
+          "1": { "description": "Front right", "value": "FR" },
+          "2": { "description": "Rear left",   "value": "RL" },
+          "3": { "description": "Rear right",  "value": "RR" }
+        }}
+    },
+    {"id": "AUDI_TPOS_2", "path": "Tires", "name": "Tire 1 position", "fmt": {"bix": 32, "len": 8, "map": {
           "0": { "description": "Front left",  "value": "FL" },
           "1": { "description": "Front right", "value": "FR" },
           "2": { "description": "Rear left",   "value": "RL" },
@@ -25,9 +45,19 @@
   ]},
 { "hdr": "70B", "fcm1": true, "dbg": true, "cmd": {"22": "18A2"}, "freq": 30,
   "signals": [
-    {"id": "AUDI_TP_RL", "path": "Tires", "fmt": {"bix": 40, "len": 8, "max": 6.375, "div": 40, "unit": "bars" }, "name": "Rear left tire pressure", "suggestedMetric": "rearLeftTirePressure"},
-    {"id": "AUDI_TP_3",  "path": "Tires", "fmt": {"bix": 48, "len": 8, "max": 25.5,  "div": 10, "unit": "bars" }, "name": "Tire #3 pressure"},
+    {"id": "AUDI_TP_RL", "path": "Tires", "fmt": {"bix": 40, "len": 8, "max": 6.375, "div": 40,             "unit": "bars"    }, "name": "Rear left tire pressure",   "suggestedMetric": "rearLeftTirePressure"},
+    {"id": "AUDI_TP_3",  "path": "Tires", "fmt": {"bix": 48, "len": 8, "max": 25.5,  "div": 10,             "unit": "bars"    }, "name": "Tire #3 pressure"},
+    {"id": "AUDI_TT_3",  "path": "Tires", "fmt": {"bix": 56, "len": 8, "max": 100,              "add": -40, "unit": "celsius" }, "name": "Tire 3 temperature"},
+    {"id": "AUDI_TPS_3", "path": "Tires", "fmt": {"bix": 64, "len": 8, "max": 25.5,  "div": 10,             "unit": "bars"    }, "name": "Tire 3 specified pressure"},
+    {"id": "AUDI_TPW_3", "path": "Tires", "fmt": {"bix": 72, "len": 8, "max": 25.5,  "div": 10,             "unit": "bars"    }, "name": "Tire 3 warning pressure"},
     {"id": "AUDI_TID_3", "path": "Tires", "name": "Tire #3 position", "fmt": {"bix": 32, "len": 8, "map": {
+          "0": { "description": "Front left",  "value": "FL" },
+          "1": { "description": "Front right", "value": "FR" },
+          "2": { "description": "Rear left",   "value": "RL" },
+          "3": { "description": "Rear right",  "value": "RR" }
+        }}
+    },
+    {"id": "AUDI_TPOS_3", "path": "Tires", "name": "Tire 1 position", "fmt": {"bix": 32, "len": 8, "map": {
           "0": { "description": "Front left",  "value": "FL" },
           "1": { "description": "Front right", "value": "FR" },
           "2": { "description": "Rear left",   "value": "RL" },
@@ -37,9 +67,19 @@
   ]},
 { "hdr": "70B", "fcm1": true, "dbg": true, "cmd": {"22": "18A3"}, "freq": 30,
   "signals": [
-    {"id": "AUDI_TP_RR", "path": "Tires", "fmt": {"bix": 40, "len": 8, "max": 6.375, "div": 40, "unit": "bars" }, "name": "Rear right tire pressure", "suggestedMetric": "rearRightTirePressure"},
-    {"id": "AUDI_TP_4",  "path": "Tires", "fmt": {"bix": 48, "len": 8, "max": 25.5,  "div": 10, "unit": "bars" }, "name": "Tire #4 pressure"},
+    {"id": "AUDI_TP_RR", "path": "Tires", "fmt": {"bix": 40, "len": 8, "max": 6.375, "div": 40,             "unit": "bars"    }, "name": "Rear right tire pressure",  "suggestedMetric": "rearRightTirePressure"},
+    {"id": "AUDI_TP_4",  "path": "Tires", "fmt": {"bix": 48, "len": 8, "max": 25.5,  "div": 10,             "unit": "bars"    }, "name": "Tire #4 pressure"},
+    {"id": "AUDI_TT_4",  "path": "Tires", "fmt": {"bix": 56, "len": 8, "max": 100,              "add": -40, "unit": "celsius" }, "name": "Tire 4 temperature"},
+    {"id": "AUDI_TPS_4", "path": "Tires", "fmt": {"bix": 64, "len": 8, "max": 25.5,  "div": 10,             "unit": "bars"    }, "name": "Tire 4 specified pressure"},
+    {"id": "AUDI_TPW_4", "path": "Tires", "fmt": {"bix": 72, "len": 8, "max": 25.5,  "div": 10,             "unit": "bars"    }, "name": "Tire 4 warning pressure"},
     {"id": "AUDI_TID_4", "path": "Tires", "name": "Tire #4 position", "fmt": {"bix": 32, "len": 8, "map": {
+          "0": { "description": "Front left",  "value": "FL" },
+          "1": { "description": "Front right", "value": "FR" },
+          "2": { "description": "Rear left",   "value": "RL" },
+          "3": { "description": "Rear right",  "value": "RR" }
+        }}
+    },
+    {"id": "AUDI_TPOS_4", "path": "Tires", "name": "Tire 1 position", "fmt": {"bix": 32, "len": 8, "map": {
           "0": { "description": "Front left",  "value": "FL" },
           "1": { "description": "Front right", "value": "FR" },
           "2": { "description": "Rear left",   "value": "RL" },
@@ -50,9 +90,9 @@
 { "hdr": "710", "dbg": true, "cmd": {"22": "2A0A"}, "freq": 30,
   "signals": [
     {"id": "AUDI_ODO_3",        "path": "Trips",   "fmt": { "len": 32, "max": 255,                         "unit": "kilometers" }, "name": "Odometer",                              "suggestedMetric": "odometer"},
-    {"id": "AUDI_ODO",          "path": "Trips",   "fmt": { "len": 32, "max": 255,                         "unit": "kilometers" }, "name": "Odometer",                              "suggestedMetric": "odometer"},
+    {"id": "AUDI_ODO_V2",       "path": "Trips",   "fmt": { "len": 32, "max": 255,                         "unit": "kilometers" }, "name": "Odometer",                              "suggestedMetric": "odometer"},
     {"id": "AUDI_SSB_SENSOR_T", "path": "Battery", "fmt": { "len": 8,  "max": 215, "min": -40, "add": -40, "unit": "celsius"    }, "name": "Start/stop battery sensor temperature"},
-    {"id": "AUDI_ODO_2",        "path": "Trips",   "fmt": { "len": 32, "max": 255,                         "unit": "kilometers" }, "name": "Odometer (alternative)",                "suggestedMetric": "odometer"}
+    {"id": "AUDI_ODO_2_V2",     "path": "Trips",   "fmt": { "len": 32, "max": 255,                         "unit": "kilometers" }, "name": "Odometer (alternative)",                "suggestedMetric": "odometer"}
   ]},
 { "hdr": "710", "rax": "77A", "dbg": true, "cmd": {"22": "2A07"}, "freq": 1,
   "signals": [
@@ -143,7 +183,7 @@
 { "hdr": "714", "dbg": true, "cmd": {"22": "2203"}, "freq": 30,
   "signals": [
     {"id": "AUDI_ODO_DASH", "path": "Trips", "fmt": { "len": 24, "max": 255,                  "unit": "kilometers" }, "name": "Odometer (dash)", "suggestedMetric": "odometer"},
-    {"id": "AUDI_ODO_V2",   "path": "Trips", "fmt": { "len": 24, "max": 167772150, "mul": 10, "unit": "kilometers" }, "name": "Odometer (dash)", "suggestedMetric": "odometer"}
+    {"id": "AUDI_ODO_V3",   "path": "Trips", "fmt": { "len": 24, "max": 167772150, "mul": 10, "unit": "kilometers" }, "name": "Odometer (dash)", "suggestedMetric": "odometer"}
   ]},
 { "hdr": "714", "dbg": true, "cmd": {"22": "2294"}, "freq": 30,
   "signals": [
@@ -175,7 +215,8 @@
   ]},
 { "hdr": "715", "dbg": true, "cmd": {"22": "2353"}, "freq": 3600,
   "signals": [
-    {"id": "AUDI_CRSH_FRONT", "path": "Trips", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Crashes, front"}
+    {"id": "AUDI_CRSH_FRONT",      "path": "Trips", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Crashes, front"},
+    {"id": "AUDI_CRASH_CNT_FRONT", "path": "Stats", "fmt": { "len": 8, "max": 100, "unit": "scalar" }, "name": "Crashes, front"}
   ]},
 { "hdr": "715", "dbg": true, "cmd": {"22": "2354"}, "freq": 3600,
   "signals": [
@@ -191,7 +232,8 @@
   ]},
 { "hdr": "715", "dbg": true, "cmd": {"22": "2357"}, "freq": 3600,
   "signals": [
-    {"id": "AUDI_CRASH_CNT_ROLL", "path": "Stats", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Crashes, rollover"}
+    {"id": "AUDI_CRASH_CNT_ROLL",     "path": "Stats", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Crashes, rollover"},
+    {"id": "AUDI_CRASH_CNT_ROLLOVER", "path": "Stats", "fmt": { "len": 8, "max": 100, "unit": "scalar" }, "name": "Crashes, rollover"}
   ]},
 { "hdr": "744", "rax": "7AE", "fcm1": true, "dbg": true, "cmd": {"22": "4965"}, "freq": 1,
   "signals": [
@@ -203,9 +245,9 @@
   ]},
 { "hdr": "7E0", "dbg": true, "cmd": {"22": "10E0"}, "freq": 30,
   "signals": [
-    {"id": "AUDI_ODO_2_V2", "path": "Trips", "fmt": { "len": 32, "max": 4294967295, "unit": "kilometers" }, "name": "Odometer (alternative)",   "suggestedMetric": "odometer"},
+    {"id": "AUDI_ODO_2_V3", "path": "Trips", "fmt": { "len": 32, "max": 4294967295, "unit": "kilometers" }, "name": "Odometer (alternative)",   "suggestedMetric": "odometer"},
     {"id": "AUDI_ODO_3_V2", "path": "Trips", "fmt": { "len": 32, "max": 4294967295, "unit": "kilometers" }, "name": "Odometer (alternative 2)", "suggestedMetric": "odometer"},
-    {"id": "AUDI_ODO_V3",   "path": "Trips", "fmt": { "len": 32, "max": 4000000000, "unit": "kilometers" }, "name": "Odometer",                 "suggestedMetric": "odometer"}
+    {"id": "AUDI_ODO_V4",   "path": "Trips", "fmt": { "len": 32, "max": 4000000000, "unit": "kilometers" }, "name": "Odometer",                 "suggestedMetric": "odometer"}
   ]},
 { "hdr": "7E0", "dbg": true, "cmd": {"22": "1160"}, "freq": 30,
   "signals": [
@@ -227,11 +269,6 @@
 { "hdr": "7E0", "dbg": true, "cmd": {"22": "11C5"}, "freq": 30,
   "signals": [
     {"id": "AUDI_OIL_MIN", "path": "Fluids", "fmt": { "len": 16, "max": 262, "div": 250, "unit": "centimeters" }, "name": "Oil level (min)"}
-  ]},
-{ "hdr": "7E0", "dbg": true, "cmd": {"22": "295A"}, "freq": 30,
-  "signals": [
-    {"id": "AUDI_ODO_V4",   "path": "Trips", "fmt": { "len": 24, "max": 16777215,   "unit": "kilometers" }, "name": "Odometer",               "suggestedMetric": "odometer"},
-    {"id": "AUDI_ODO_2_V3", "path": "Trips", "fmt": { "len": 32, "max": 4294967295, "unit": "kilometers" }, "name": "Odometer (alternative)", "suggestedMetric": "odometer"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "028D"}, "freq": 1,
   "signals": [
@@ -305,6 +342,11 @@
   "signals": [
     {"id": "AUDI_APP_POS2", "path": "Control.Pedals", "fmt": { "len": 16, "max": 65, "div": 1000, "unit": "volts" }, "name": "Accelerator pedal position sensor 2"}
   ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "295A"}, "freq": 5,
+  "signals": [
+    {"id": "AUDI_ODO",   "path": "Trips", "fmt": { "len": 24, "max": 16777215,   "unit": "kilometers" }, "name": "Odometer",               "suggestedMetric": "odometer"},
+    {"id": "AUDI_ODO_2", "path": "Trips", "fmt": { "len": 32, "max": 4294967295, "unit": "kilometers" }, "name": "Odometer (alternative)", "suggestedMetric": "odometer"}
+  ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "F40D"}, "freq": 0.25,
   "signals": [
     {"id": "AUDI_VSS", "path": "Movement", "fmt": { "len": 8, "max": 255, "unit": "kilometersPerHour" }, "name": "Vehicle speed", "suggestedMetric": "speed", "description": "Current vehicle speed."}
@@ -329,35 +371,9 @@
   "signals": [
     {"id": "AUDI_VPWR", "path": "Battery", "fmt": { "len": 16, "max": 65, "div": 1000, "unit": "volts" }, "name": "Control module voltage"}
   ]},
-{ "hdr": "7E1", "dbg": true, "cmd": {"22": "0302"}, "freq": 900,
-  "signals": [
-    {"id": "AUDI_DRIVE_TIME", "path": "Stats", "fmt": { "len": 16, "max": 16383, "div": 4, "unit": "hours" }, "name": "Total drive time"}
-  ]},
-{ "hdr": "7E1", "dbg": true, "cmd": {"22": "0303"}, "freq": 900,
-  "signals": [
-    {"id": "AUDI_DRIVE_TIME_ECO", "path": "Stats", "fmt": { "len": 8, "max": 100, "div": 2.5, "unit": "percent" }, "name": "Driving time (eco)", "description": "Value may be wrong, needs more validation. Proportion of time spent driving in eco mode"}
-  ]},
-{ "hdr": "7E1", "dbg": true, "cmd": {"22": "0304"}, "freq": 900,
-  "signals": [
-    {"id": "AUDI_DRIVE_TIME_SPORT", "path": "Stats", "fmt": { "len": 8, "max": 100, "div": 2.5, "unit": "percent" }, "name": "Driving time (sport)", "description": "Value may be wrong, needs more validation. Proportion of time spent driving in sport mode"}
-  ]},
-{ "hdr": "7E1", "dbg": true, "cmd": {"22": "0305"}, "freq": 900,
-  "signals": [
-    {"id": "AUDI_DRIVE_TIME_MANUAL", "path": "Stats", "fmt": { "len": 8, "max": 100, "div": 2.5, "unit": "percent" }, "name": "Driving time (manual)", "description": "Value may be wrong, needs more validation. Proportion of time spent driving in manual mode"}
-  ]},
 { "hdr": "7E1", "dbg": true, "cmd": {"22": "101A"}, "freq": 1,
   "signals": [
     {"id": "AUDI_ODO_TCM_2", "path": "Trips", "fmt": { "len": 24, "blsb": true, "max": 16777215, "unit": "kilometers" }, "name": "Odometer (TCM #2)", "suggestedMetric": "odometer"}
-  ]},
-{ "hdr": "7E1", "dbg": true, "cmd": {"22": "210F"}, "freq": 900,
-  "signals": [
-    {"id": "AUDI_GEAR", "path": "Transmission", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Gear"},
-    {"id": "AUDI_GEAR_SHFT", "path": "Transmission", "name": "Shift gear", "fmt": {"len": 8, "map": {
-          "1": { "description": "Reverse", "value": "REVERSE" },
-          "2": { "description": "Park",    "value": "PARK" },
-          "3": { "description": "Drive",   "value": "DRIVE" }
-        }}
-    }
   ]},
 { "hdr": "7E1", "dbg": true, "cmd": {"22": "2B1B"}, "freq": 30,
   "signals": [
@@ -383,6 +399,29 @@
   "signals": [
     {"id": "AUDI_ODO_TCM_2_HD", "path": "Trips", "fmt": { "len": 32, "blsb": true, "max": 429496729.5, "div": 10, "unit": "kilometers" }, "name": "Odometer (TCM #2 high res)", "suggestedMetric": "odometer"}
   ]},
+{ "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "0302"}, "freq": 300,
+  "signals": [
+    {"id": "AUDI_DRIVE_TIME", "path": "Stats", "fmt": { "len": 16, "max": 16383, "div": 4, "unit": "hours" }, "name": "Total drive time"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "0303"}, "freq": 300,
+  "signals": [
+    {"id": "AUDI_DRIVE_TIME_ECO", "path": "Stats", "fmt": { "len": 8, "max": 100, "div": 2.5, "unit": "percent" }, "name": "Driving time (eco)", "description": "Value may be wrong, needs more validation. Proportion of time spent driving in eco mode"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "0304"}, "freq": 300,
+  "signals": [
+    {"id": "AUDI_DRIVE_TIME_SPORT", "path": "Stats", "fmt": { "len": 8, "max": 100, "div": 2.5, "unit": "percent" }, "name": "Driving time (sport)", "description": "Value may be wrong, needs more validation. Proportion of time spent driving in sport mode"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "0305"}, "freq": 300,
+  "signals": [
+    {"id": "AUDI_DRIVE_TIME_MANUAL", "path": "Stats", "fmt": { "len": 8, "max": 100, "div": 2.5, "unit": "percent" }, "name": "Driving time (manual)", "description": "Value may be wrong, needs more validation. Proportion of time spent driving in manual mode"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "0805"}, "freq": 0.25,
+  "signals": [
+    {"id": "AUDI_BRAKE_LIGHT_ON_VALID", "path": "Control", "fmt": {"bix": 4, "len": 1, "max": 1, "unit": "noyes" }, "name": "Brake light reading valid?"},
+    {"id": "AUDI_BRAKE_PRESSED_VALID",  "path": "Control", "fmt": {"bix": 5, "len": 1, "max": 1, "unit": "noyes" }, "name": "Brake pressure reading valid?"},
+    {"id": "AUDI_BRAKE_PRESSED",        "path": "Control", "fmt": {"bix": 6, "len": 1, "max": 1, "unit": "offon" }, "name": "Brake"},
+    {"id": "AUDI_BRAKE_LIGHT_ON",       "path": "Control", "fmt": {"bix": 7, "len": 1, "max": 1, "unit": "offon" }, "name": "Brake ligh"}
+  ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "1001"}, "freq": 0.25,
   "signals": [
     {"id": "AUDI_TIRE_FR_SPD_V3", "path": "Movement", "fmt": { "len": 16, "max": 255, "div": 10, "unit": "kilometersPerHour" }, "name": "Front right wheel speed"}
@@ -398,6 +437,25 @@
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "1004"}, "freq": 0.25,
   "signals": [
     {"id": "AUDI_TIRE_RL_SPD_V3", "path": "Movement", "fmt": { "len": 16, "max": 255, "div": 10, "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "210F"}, "freq": 2,
+  "signals": [
+    {"id": "AUDI_GEAR", "path": "Transmission", "name": "Current gear", "description": "The automatic transmission gear.", "fmt": {"len": 8, "map": {
+          "1": { "description": "First gear",   "value": "1" },
+          "2": { "description": "Second gear",  "value": "2" },
+          "3": { "description": "Third gear",   "value": "3" },
+          "4": { "description": "Fourth gear",  "value": "4" },
+          "5": { "description": "Fifth gear",   "value": "5" },
+          "6": { "description": "Sixth gear",   "value": "6" },
+          "7": { "description": "Seventh gear", "value": "7" }
+        }}
+    },
+    {"id": "AUDI_GEAR_SHFT", "path": "Transmission", "name": "Shift gear", "fmt": {"len": 8, "map": {
+          "1": { "description": "Reverse", "value": "REVERSE" },
+          "2": { "description": "Park",    "value": "PARK" },
+          "3": { "description": "Drive",   "value": "DRIVE" }
+        }}
+    }
   ]},
 { "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "028C"}, "freq": 1,
   "signals": [
