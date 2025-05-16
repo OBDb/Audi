@@ -12,13 +12,6 @@
           "2": { "description": "Rear left",   "value": "RL" },
           "3": { "description": "Rear right",  "value": "RR" }
         }}
-    },
-    {"id": "AUDI_TPOS_1", "path": "Tires", "name": "Tire 1 position", "fmt": {"bix": 32, "len": 8, "map": {
-          "0": { "description": "Front left",  "value": "FL" },
-          "1": { "description": "Front right", "value": "FR" },
-          "2": { "description": "Rear left",   "value": "RL" },
-          "3": { "description": "Rear right",  "value": "RR" }
-        }}
     }
   ]},
 { "hdr": "70B", "fcm1": true, "dbg": true, "cmd": {"22": "18A1"}, "freq": 30,
@@ -29,13 +22,6 @@
     {"id": "AUDI_TPS_2", "path": "Tires", "fmt": {"bix": 64, "len": 8, "max": 25.5,  "div": 10,             "unit": "bars"    }, "name": "Tire 2 specified pressure"},
     {"id": "AUDI_TPW_2", "path": "Tires", "fmt": {"bix": 72, "len": 8, "max": 25.5,  "div": 10,             "unit": "bars"    }, "name": "Tire 2 warning pressure"},
     {"id": "AUDI_TID_2", "path": "Tires", "name": "Tire #2 position", "fmt": {"bix": 32, "len": 8, "map": {
-          "0": { "description": "Front left",  "value": "FL" },
-          "1": { "description": "Front right", "value": "FR" },
-          "2": { "description": "Rear left",   "value": "RL" },
-          "3": { "description": "Rear right",  "value": "RR" }
-        }}
-    },
-    {"id": "AUDI_TPOS_2", "path": "Tires", "name": "Tire 1 position", "fmt": {"bix": 32, "len": 8, "map": {
           "0": { "description": "Front left",  "value": "FL" },
           "1": { "description": "Front right", "value": "FR" },
           "2": { "description": "Rear left",   "value": "RL" },
@@ -56,13 +42,6 @@
           "2": { "description": "Rear left",   "value": "RL" },
           "3": { "description": "Rear right",  "value": "RR" }
         }}
-    },
-    {"id": "AUDI_TPOS_3", "path": "Tires", "name": "Tire 1 position", "fmt": {"bix": 32, "len": 8, "map": {
-          "0": { "description": "Front left",  "value": "FL" },
-          "1": { "description": "Front right", "value": "FR" },
-          "2": { "description": "Rear left",   "value": "RL" },
-          "3": { "description": "Rear right",  "value": "RR" }
-        }}
     }
   ]},
 { "hdr": "70B", "fcm1": true, "dbg": true, "cmd": {"22": "18A3"}, "freq": 30,
@@ -78,21 +57,12 @@
           "2": { "description": "Rear left",   "value": "RL" },
           "3": { "description": "Rear right",  "value": "RR" }
         }}
-    },
-    {"id": "AUDI_TPOS_4", "path": "Tires", "name": "Tire 1 position", "fmt": {"bix": 32, "len": 8, "map": {
-          "0": { "description": "Front left",  "value": "FL" },
-          "1": { "description": "Front right", "value": "FR" },
-          "2": { "description": "Rear left",   "value": "RL" },
-          "3": { "description": "Rear right",  "value": "RR" }
-        }}
     }
   ]},
 { "hdr": "710", "dbg": true, "cmd": {"22": "2A0A"}, "freq": 30,
   "signals": [
     {"id": "AUDI_ODO_3",        "path": "Trips",   "fmt": { "len": 32, "max": 255,                         "unit": "kilometers" }, "name": "Odometer",                              "suggestedMetric": "odometer"},
-    {"id": "AUDI_ODO_V2",       "path": "Trips",   "fmt": { "len": 32, "max": 255,                         "unit": "kilometers" }, "name": "Odometer",                              "suggestedMetric": "odometer"},
-    {"id": "AUDI_SSB_SENSOR_T", "path": "Battery", "fmt": { "len": 8,  "max": 215, "min": -40, "add": -40, "unit": "celsius"    }, "name": "Start/stop battery sensor temperature"},
-    {"id": "AUDI_ODO_2_V2",     "path": "Trips",   "fmt": { "len": 32, "max": 255,                         "unit": "kilometers" }, "name": "Odometer (alternative)",                "suggestedMetric": "odometer"}
+    {"id": "AUDI_SSB_SENSOR_T", "path": "Battery", "fmt": { "len": 8,  "max": 215, "min": -40, "add": -40, "unit": "celsius"    }, "name": "Start/stop battery sensor temperature"}
   ]},
 { "hdr": "710", "rax": "77A", "dbg": true, "cmd": {"22": "2A07"}, "freq": 1,
   "signals": [
@@ -183,7 +153,7 @@
 { "hdr": "714", "dbg": true, "cmd": {"22": "2203"}, "freq": 30,
   "signals": [
     {"id": "AUDI_ODO_DASH", "path": "Trips", "fmt": { "len": 24, "max": 255,                  "unit": "kilometers" }, "name": "Odometer (dash)", "suggestedMetric": "odometer"},
-    {"id": "AUDI_ODO_V3",   "path": "Trips", "fmt": { "len": 24, "max": 167772150, "mul": 10, "unit": "kilometers" }, "name": "Odometer (dash)", "suggestedMetric": "odometer"}
+    {"id": "AUDI_ODO_V2",   "path": "Trips", "fmt": { "len": 24, "max": 167772150, "mul": 10, "unit": "kilometers" }, "name": "Odometer (dash)", "suggestedMetric": "odometer"}
   ]},
 { "hdr": "714", "dbg": true, "cmd": {"22": "2294"}, "freq": 30,
   "signals": [
@@ -245,13 +215,12 @@
   ]},
 { "hdr": "7E0", "dbg": true, "cmd": {"22": "10E0"}, "freq": 30,
   "signals": [
-    {"id": "AUDI_ODO_2_V3", "path": "Trips", "fmt": { "len": 32, "max": 4294967295, "unit": "kilometers" }, "name": "Odometer (alternative)",   "suggestedMetric": "odometer"},
-    {"id": "AUDI_ODO_3_V2", "path": "Trips", "fmt": { "len": 32, "max": 4294967295, "unit": "kilometers" }, "name": "Odometer (alternative 2)", "suggestedMetric": "odometer"},
-    {"id": "AUDI_ODO_V4",   "path": "Trips", "fmt": { "len": 32, "max": 4000000000, "unit": "kilometers" }, "name": "Odometer",                 "suggestedMetric": "odometer"}
+    {"id": "AUDI_ODO_2_V2", "path": "Trips", "fmt": { "len": 32, "max": 4294967295, "unit": "kilometers" }, "name": "Odometer (alternative)", "suggestedMetric": "odometer"},
+    {"id": "AUDI_ODO_V3",   "path": "Trips", "fmt": { "len": 32, "max": 4000000000, "unit": "kilometers" }, "name": "Odometer",               "suggestedMetric": "odometer"}
   ]},
 { "hdr": "7E0", "dbg": true, "cmd": {"22": "1160"}, "freq": 30,
   "signals": [
-    {"id": "AUDI_ODO_2_V4", "path": "Trips", "fmt": { "len": 32, "max": 4000000000, "unit": "kilometers" }, "name": "Odometer (alt)",             "suggestedMetric": "odometer"},
+    {"id": "AUDI_ODO_2_V3", "path": "Trips", "fmt": { "len": 32, "max": 4000000000, "unit": "kilometers" }, "name": "Odometer (alt)",             "suggestedMetric": "odometer"},
     {"id": "AUDI_ODO_HD",   "path": "Trips", "fmt": { "len": 32, "max": 4294967295, "unit": "meters"     }, "name": "Odometer (high resolution)", "suggestedMetric": "odometer"}
   ]},
 { "hdr": "7E0", "dbg": true, "cmd": {"22": "11BA"}, "freq": 15,
