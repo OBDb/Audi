@@ -6,14 +6,16 @@
   "commands": [
 { "hdr": "70B", "fcm1": true, "dbg": true, "cmd": {"22": "18A0"}, "freq": 30,
   "signals": [
-    {"id": "AUDI_TID_RL", "path": "Tires", "fmt": {           "len": 32, "max": 100,                                          "unit": "scalar"  }, "name": "Rear left tire sensor id"},
-    {"id": "AUDI_TP_FR",  "path": "Tires", "fmt": {"bix": 40, "len": 8,  "max": 6.375, "div": 40,                             "unit": "bars"    }, "name": "Front right tire pressure",         "suggestedMetric": "frontRightTirePressure"},
-    {"id": "AUDI_TP_1",   "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,  "div": 10,                             "unit": "bars"    }, "name": "Tire #1 pressure"},
-    {"id": "AUDI_TP_RL",  "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,  "div": 10,             "nullmax": 25,  "unit": "bars"    }, "name": "Rear left tire current pressure",   "suggestedMetric": "rearLeftTirePressure"},
-    {"id": "AUDI_TT_RL",  "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 100,              "add": -40,                 "unit": "celsius" }, "name": "Rear left tire temperature",        "suggestedMetric": "rearLeftTireTemperature"},
-    {"id": "AUDI_TT_1",   "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 100,              "add": -40, "nullmax": 100, "unit": "celsius" }, "name": "Tire 1 temperature",                "suggestedMetric": "frontLeftTireTemperature"},
-    {"id": "AUDI_TPS_RL", "path": "Tires", "fmt": {"bix": 64, "len": 8,  "max": 25.5,  "div": 10,                             "unit": "bars"    }, "name": "Rear left tire specified pressure"},
-    {"id": "AUDI_TPW_RL", "path": "Tires", "fmt": {"bix": 72, "len": 8,  "max": 25.5,  "div": 10,                             "unit": "bars"    }, "name": "Rear left tire warning pressure"},
+    {"id": "AUDI_TID_RL",    "path": "Tires", "fmt": {           "len": 32, "max": 100,                                                      "unit": "scalar"  }, "name": "Rear left tire sensor id"},
+    {"id": "AUDI_TP_FR",     "path": "Tires", "fmt": {"bix": 40, "len": 8,  "max": 6.375,             "div": 40,                             "unit": "bars"    }, "name": "Front right tire pressure",            "suggestedMetric": "frontRightTirePressure"},
+    {"id": "AUDI_TP_1",      "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,              "div": 10,                             "unit": "bars"    }, "name": "Tire #1 pressure"},
+    {"id": "AUDI_TP_RL",     "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,              "div": 10,             "nullmax": 25,  "unit": "bars"    }, "name": "Rear left tire current pressure",      "suggestedMetric": "rearLeftTirePressure"},
+    {"id": "AUDI_TT_FR",     "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 127,   "min": -40,            "add": -40, "nullmax": 127, "unit": "celsius" }, "name": "Front right tire temperature",         "suggestedMetric": "frontRightTireTemperature"},
+    {"id": "AUDI_TT_RL",     "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 100,                          "add": -40,                 "unit": "celsius" }, "name": "Rear left tire temperature",           "suggestedMetric": "rearLeftTireTemperature"},
+    {"id": "AUDI_TT_1",      "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 100,                          "add": -40, "nullmax": 100, "unit": "celsius" }, "name": "Tire 1 temperature",                   "suggestedMetric": "frontLeftTireTemperature"},
+    {"id": "AUDI_TP_SET_FR", "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 6.375,             "div": 40,                             "unit": "bars"    }, "name": "Front right tire pressure, set point"},
+    {"id": "AUDI_TPS_RL",    "path": "Tires", "fmt": {"bix": 64, "len": 8,  "max": 25.5,              "div": 10,                             "unit": "bars"    }, "name": "Rear left tire specified pressure"},
+    {"id": "AUDI_TPW_RL",    "path": "Tires", "fmt": {"bix": 72, "len": 8,  "max": 25.5,              "div": 10,                             "unit": "bars"    }, "name": "Rear left tire warning pressure"},
     {"id": "AUDI_TID_1", "path": "Tires", "name": "Tire #1 position", "fmt": {"bix": 32, "len": 8, "map": {
           "0": { "description": "Front left",  "value": "FL" },
           "1": { "description": "Front right", "value": "FR" },
@@ -24,14 +26,16 @@
   ]},
 { "hdr": "70B", "fcm1": true, "dbg": true, "cmd": {"22": "18A1"}, "freq": 30,
   "signals": [
-    {"id": "AUDI_TID_FR",   "path": "Tires", "fmt": {           "len": 32, "max": 100,                                          "unit": "scalar"  }, "name": "Front right tire sensor id"},
-    {"id": "AUDI_TP_FL",    "path": "Tires", "fmt": {"bix": 40, "len": 8,  "max": 6.375, "div": 40,                             "unit": "bars"    }, "name": "Front left tire pressure",            "suggestedMetric": "frontLeftTirePressure"},
-    {"id": "AUDI_TP_2",     "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,  "div": 10,                             "unit": "bars"    }, "name": "Tire #2 pressure"},
-    {"id": "AUDI_TP_FR_V2", "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,  "div": 10,             "nullmax": 25,  "unit": "bars"    }, "name": "Front right tire current pressure",   "suggestedMetric": "frontRightTirePressure"},
-    {"id": "AUDI_TT_FR",    "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 100,              "add": -40,                 "unit": "celsius" }, "name": "Front right tire temperature",        "suggestedMetric": "frontRightTireTemperature"},
-    {"id": "AUDI_TT_2",     "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 100,              "add": -40, "nullmax": 100, "unit": "celsius" }, "name": "Tire 2 temperature",                  "suggestedMetric": "frontRightTireTemperature"},
-    {"id": "AUDI_TPS_FR",   "path": "Tires", "fmt": {"bix": 64, "len": 8,  "max": 25.5,  "div": 10,                             "unit": "bars"    }, "name": "Front right tire specified pressure"},
-    {"id": "AUDI_TPW_FR",   "path": "Tires", "fmt": {"bix": 72, "len": 8,  "max": 25.5,  "div": 10,                             "unit": "bars"    }, "name": "Front right tire warning pressure"},
+    {"id": "AUDI_TID_FR",    "path": "Tires", "fmt": {           "len": 32, "max": 100,                                                      "unit": "scalar"  }, "name": "Front right tire sensor id"},
+    {"id": "AUDI_TP_FL",     "path": "Tires", "fmt": {"bix": 40, "len": 8,  "max": 6.375,             "div": 40,                             "unit": "bars"    }, "name": "Front left tire pressure",            "suggestedMetric": "frontLeftTirePressure"},
+    {"id": "AUDI_TP_2",      "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,              "div": 10,                             "unit": "bars"    }, "name": "Tire #2 pressure"},
+    {"id": "AUDI_TP_FR_V2",  "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,              "div": 10,             "nullmax": 25,  "unit": "bars"    }, "name": "Front right tire current pressure",   "suggestedMetric": "frontRightTirePressure"},
+    {"id": "AUDI_TT_FL",     "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 127,   "min": -40,            "add": -40, "nullmax": 127, "unit": "celsius" }, "name": "Front left tire temperature",         "suggestedMetric": "frontLeftTireTemperature"},
+    {"id": "AUDI_TT_FR_V2",  "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 100,                          "add": -40,                 "unit": "celsius" }, "name": "Front right tire temperature",        "suggestedMetric": "frontRightTireTemperature"},
+    {"id": "AUDI_TT_2",      "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 100,                          "add": -40, "nullmax": 100, "unit": "celsius" }, "name": "Tire 2 temperature",                  "suggestedMetric": "frontRightTireTemperature"},
+    {"id": "AUDI_TP_SET_FL", "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 6.375,             "div": 40,                             "unit": "bars"    }, "name": "Front left tire pressure, set point"},
+    {"id": "AUDI_TPS_FR",    "path": "Tires", "fmt": {"bix": 64, "len": 8,  "max": 25.5,              "div": 10,                             "unit": "bars"    }, "name": "Front right tire specified pressure"},
+    {"id": "AUDI_TPW_FR",    "path": "Tires", "fmt": {"bix": 72, "len": 8,  "max": 25.5,              "div": 10,                             "unit": "bars"    }, "name": "Front right tire warning pressure"},
     {"id": "AUDI_TID_2", "path": "Tires", "name": "Tire #2 position", "fmt": {"bix": 32, "len": 8, "map": {
           "0": { "description": "Front left",  "value": "FL" },
           "1": { "description": "Front right", "value": "FR" },
@@ -42,14 +46,16 @@
   ]},
 { "hdr": "70B", "fcm1": true, "dbg": true, "cmd": {"22": "18A2"}, "freq": 30,
   "signals": [
-    {"id": "AUDI_TID_RR",   "path": "Tires", "fmt": {           "len": 32, "max": 100,                                          "unit": "scalar"  }, "name": "Rear right tire sensor id"},
-    {"id": "AUDI_TP_RL_V2", "path": "Tires", "fmt": {"bix": 40, "len": 8,  "max": 6.375, "div": 40,                             "unit": "bars"    }, "name": "Rear left tire pressure",            "suggestedMetric": "rearLeftTirePressure"},
-    {"id": "AUDI_TP_3",     "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,  "div": 10,                             "unit": "bars"    }, "name": "Tire #3 pressure"},
-    {"id": "AUDI_TP_RR",    "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,  "div": 10,             "nullmax": 25,  "unit": "bars"    }, "name": "Rear right tire current pressure",   "suggestedMetric": "rearRightTirePressure"},
-    {"id": "AUDI_TT_RR",    "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 100,              "add": -40,                 "unit": "celsius" }, "name": "Rear right tire temperature",        "suggestedMetric": "rearRightTireTemperature"},
-    {"id": "AUDI_TT_3",     "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 100,              "add": -40, "nullmax": 100, "unit": "celsius" }, "name": "Tire 3 temperature",                 "suggestedMetric": "rearLeftTireTemperature"},
-    {"id": "AUDI_TPS_RR",   "path": "Tires", "fmt": {"bix": 64, "len": 8,  "max": 25.5,  "div": 10,                             "unit": "bars"    }, "name": "Rear right tire specified pressure"},
-    {"id": "AUDI_TPW_RR",   "path": "Tires", "fmt": {"bix": 72, "len": 8,  "max": 25.5,  "div": 10,                             "unit": "bars"    }, "name": "Rear right tire warning pressure"},
+    {"id": "AUDI_TID_RR",    "path": "Tires", "fmt": {           "len": 32, "max": 100,                                                      "unit": "scalar"  }, "name": "Rear right tire sensor id"},
+    {"id": "AUDI_TP_RL_V2",  "path": "Tires", "fmt": {"bix": 40, "len": 8,  "max": 6.375,             "div": 40,                             "unit": "bars"    }, "name": "Rear left tire pressure",            "suggestedMetric": "rearLeftTirePressure"},
+    {"id": "AUDI_TP_3",      "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,              "div": 10,                             "unit": "bars"    }, "name": "Tire #3 pressure"},
+    {"id": "AUDI_TP_RR",     "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,              "div": 10,             "nullmax": 25,  "unit": "bars"    }, "name": "Rear right tire current pressure",   "suggestedMetric": "rearRightTirePressure"},
+    {"id": "AUDI_TT_RL_V2",  "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 127,   "min": -40,            "add": -40, "nullmax": 127, "unit": "celsius" }, "name": "Rear left tire temperature",         "suggestedMetric": "rearLeftTireTemperature"},
+    {"id": "AUDI_TT_RR",     "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 100,                          "add": -40,                 "unit": "celsius" }, "name": "Rear right tire temperature",        "suggestedMetric": "rearRightTireTemperature"},
+    {"id": "AUDI_TT_3",      "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 100,                          "add": -40, "nullmax": 100, "unit": "celsius" }, "name": "Tire 3 temperature",                 "suggestedMetric": "rearLeftTireTemperature"},
+    {"id": "AUDI_TP_SET_RL", "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 6.375,             "div": 40,                             "unit": "bars"    }, "name": "Rear left tire pressure, set point"},
+    {"id": "AUDI_TPS_RR",    "path": "Tires", "fmt": {"bix": 64, "len": 8,  "max": 25.5,              "div": 10,                             "unit": "bars"    }, "name": "Rear right tire specified pressure"},
+    {"id": "AUDI_TPW_RR",    "path": "Tires", "fmt": {"bix": 72, "len": 8,  "max": 25.5,              "div": 10,                             "unit": "bars"    }, "name": "Rear right tire warning pressure"},
     {"id": "AUDI_TID_3", "path": "Tires", "name": "Tire #3 position", "fmt": {"bix": 32, "len": 8, "map": {
           "0": { "description": "Front left",  "value": "FL" },
           "1": { "description": "Front right", "value": "FR" },
@@ -60,14 +66,16 @@
   ]},
 { "hdr": "70B", "fcm1": true, "dbg": true, "cmd": {"22": "18A3"}, "freq": 30,
   "signals": [
-    {"id": "AUDI_TID_FL",   "path": "Tires", "fmt": {           "len": 32, "max": 100,                                          "unit": "scalar"  }, "name": "Front left tire sensor id"},
-    {"id": "AUDI_TP_RR_V2", "path": "Tires", "fmt": {"bix": 40, "len": 8,  "max": 6.375, "div": 40,                             "unit": "bars"    }, "name": "Rear right tire pressure",           "suggestedMetric": "rearRightTirePressure"},
-    {"id": "AUDI_TP_4",     "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,  "div": 10,                             "unit": "bars"    }, "name": "Tire #4 pressure"},
-    {"id": "AUDI_TP_FL_V2", "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,  "div": 10,             "nullmax": 25,  "unit": "bars"    }, "name": "Front left tire current pressure",   "suggestedMetric": "frontLeftTirePressure"},
-    {"id": "AUDI_TT_FL",    "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 100,              "add": -40,                 "unit": "celsius" }, "name": "Front left tire temperature",        "suggestedMetric": "frontLeftTireTemperature"},
-    {"id": "AUDI_TT_4",     "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 100,              "add": -40, "nullmax": 100, "unit": "celsius" }, "name": "Tire 4 temperature",                 "suggestedMetric": "rearRightTireTemperature"},
-    {"id": "AUDI_TPS_FL",   "path": "Tires", "fmt": {"bix": 64, "len": 8,  "max": 25.5,  "div": 10,                             "unit": "bars"    }, "name": "Front left tire specified pressure"},
-    {"id": "AUDI_TPW_FL",   "path": "Tires", "fmt": {"bix": 72, "len": 8,  "max": 25.5,  "div": 10,                             "unit": "bars"    }, "name": "Front left tire warning pressure"},
+    {"id": "AUDI_TID_FL",    "path": "Tires", "fmt": {           "len": 32, "max": 100,                                                      "unit": "scalar"  }, "name": "Front left tire sensor id"},
+    {"id": "AUDI_TP_RR_V2",  "path": "Tires", "fmt": {"bix": 40, "len": 8,  "max": 6.375,             "div": 40,                             "unit": "bars"    }, "name": "Rear right tire pressure",            "suggestedMetric": "rearRightTirePressure"},
+    {"id": "AUDI_TP_4",      "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,              "div": 10,                             "unit": "bars"    }, "name": "Tire #4 pressure"},
+    {"id": "AUDI_TP_FL_V2",  "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 25.5,              "div": 10,             "nullmax": 25,  "unit": "bars"    }, "name": "Front left tire current pressure",    "suggestedMetric": "frontLeftTirePressure"},
+    {"id": "AUDI_TT_RR_V2",  "path": "Tires", "fmt": {"bix": 48, "len": 8,  "max": 127,   "min": -40,            "add": -40, "nullmax": 127, "unit": "celsius" }, "name": "Rear right tire temperature",         "suggestedMetric": "rearRightTireTemperature"},
+    {"id": "AUDI_TT_FL_V2",  "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 100,                          "add": -40,                 "unit": "celsius" }, "name": "Front left tire temperature",         "suggestedMetric": "frontLeftTireTemperature"},
+    {"id": "AUDI_TT_4",      "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 100,                          "add": -40, "nullmax": 100, "unit": "celsius" }, "name": "Tire 4 temperature",                  "suggestedMetric": "rearRightTireTemperature"},
+    {"id": "AUDI_TP_SET_RR", "path": "Tires", "fmt": {"bix": 56, "len": 8,  "max": 6.375,             "div": 40,                             "unit": "bars"    }, "name": "Rear right tire pressure, set point"},
+    {"id": "AUDI_TPS_FL",    "path": "Tires", "fmt": {"bix": 64, "len": 8,  "max": 25.5,              "div": 10,                             "unit": "bars"    }, "name": "Front left tire specified pressure"},
+    {"id": "AUDI_TPW_FL",    "path": "Tires", "fmt": {"bix": 72, "len": 8,  "max": 25.5,              "div": 10,                             "unit": "bars"    }, "name": "Front left tire warning pressure"},
     {"id": "AUDI_TID_4", "path": "Tires", "name": "Tire #4 position", "fmt": {"bix": 32, "len": 8, "map": {
           "0": { "description": "Front left",  "value": "FL" },
           "1": { "description": "Front right", "value": "FR" },
@@ -139,19 +147,19 @@
     {"id": "AUDI_MQB_ODO",       "path": "Trips",   "fmt": {"bix": 8, "len": 24, "max": 16777175,                         "unit": "kilometers" }, "name": "Odometer",                   "suggestedMetric": "odometer"},
     {"id": "AUDI_ODO_V2",        "path": "Trips",   "fmt": {"bix": 8, "len": 24, "max": 16777175, "min": -40, "add": -40, "unit": "kilometers" }, "name": "Odometer",                   "suggestedMetric": "odometer"}
   ]},
-{ "hdr": "710", "rax": "77A", "fcm1": true, "dbg": true, "cmd": {"22": "15D1"}, "freq": 1,
+{ "hdr": "710", "rax": "77A", "fcm1": true, "dbg": true, "cmd": {"22": "15D1"}, "freq": 5,
   "signals": [
-    {"id": "AUDI_HV_EM_PWR_LIMITATION",           "path": "Engine",  "fmt": {"bix": 8,  "len": 16, "max": 3276750, "mul": 50,              "unit": "watts"         }, "name": "Electric motor power limitation"},
-    {"id": "AUDI_HV_EM_NV_PWR_LIMITATION",        "path": "Engine",  "fmt": {"bix": 24, "len": 8,  "max": 12750,   "mul": 50,              "unit": "watts"         }, "name": "Electric motor non-vehicle power limitation"},
-    {"id": "AUDI_NV_ENERGY_REQUIREMENT",          "path": "Battery", "fmt": {"bix": 32, "len": 8,  "max": 12.75,   "mul": 50, "div": 1000, "unit": "kilowattHours" }, "name": "Non-vehicle energy requirement"},
-    {"id": "AUDI_HV_EM_HVBAT_ENERGY_INFORMATION", "path": "Battery", "fmt": {"bix": 40, "len": 16, "max": 3276.75, "mul": 50, "div": 1000, "unit": "kilowattHours" }, "name": "Electric motor battery energy"}
+    {"id": "AUDI_EM_PWR_LIM",            "path": "Engine",  "fmt": {"bix": 8,  "len": 16, "max": 3276750, "mul": 50,              "unit": "watts"         }, "name": "Electric motor power limitation"},
+    {"id": "AUDI_EM_NV_PWR_LIM",         "path": "Engine",  "fmt": {"bix": 24, "len": 8,  "max": 12750,   "mul": 50,              "unit": "watts"         }, "name": "Electric motor non-vehicle power limitation"},
+    {"id": "AUDI_NV_ENERGY_REQUIREMENT", "path": "Battery", "fmt": {"bix": 32, "len": 8,  "max": 12.75,   "mul": 50, "div": 1000, "unit": "kilowattHours" }, "name": "Non-vehicle energy requirement"},
+    {"id": "AUDI_EM_HVBAT_E_INFO",       "path": "Battery", "fmt": {"bix": 40, "len": 16, "max": 3276.75, "mul": 50, "div": 1000, "unit": "kilowattHours" }, "name": "Electric motor battery energy"}
   ]},
 { "hdr": "710", "rax": "77A", "fcm1": true, "dbg": true, "cmd": {"22": "2A00"}, "freq": 1,
   "signals": [
     {"id": "AUDI_MQB_GEN_TRG_V", "path": "Battery", "fmt": { "len": 8, "max": 36.1, "min": 10.6, "div": 10, "add": 10.6, "unit": "volts" }, "name": "Generator target voltage"},
     {"id": "AUDI_SSB_VT",        "path": "Battery", "fmt": { "len": 8, "max": 36.1,              "div": 10, "add": 10.6, "unit": "volts" }, "name": "Start/stop battery target voltage"}
   ]},
-{ "hdr": "710", "rax": "77A", "fcm1": true, "dbg": true, "cmd": {"22": "2A06"}, "freq": 1,
+{ "hdr": "710", "rax": "77A", "fcm1": true, "dbg": true, "cmd": {"22": "2A06"}, "freq": 5,
   "signals": [
     {"id": "AUDI_12V_BAT_CAP", "path": "Battery", "fmt": {"bix": 16, "len": 8, "max": 255, "unit": "ampereHours" }, "name": "12V battery capacity"}
   ]},
@@ -196,9 +204,9 @@
   "signals": [
     {"id": "AUDI_GEN_CURRENT", "path": "Engine", "fmt": { "len": 16, "max": 6562.5, "div": 10, "add": 9, "unit": "amps" }, "name": "Generator current"}
   ]},
-{ "hdr": "710", "rax": "77A", "fcm1": true, "dbg": true, "cmd": {"22": "2A25"}, "freq": 1,
+{ "hdr": "710", "rax": "77A", "fcm1": true, "dbg": true, "cmd": {"22": "2A25"}, "freq": 5,
   "signals": [
-    {"id": "AUDI_BAT_INTERNAL_RES_RAW", "path": "Battery", "fmt": { "len": 8, "max": 51, "div": 5, "unit": "unknown" }, "name": "Battery internal resistance, raw"}
+    {"id": "AUDI_BAT_R_RAW", "path": "Battery", "fmt": { "len": 8, "max": 51, "div": 5, "unit": "unknown" }, "name": "Battery internal resistance, raw"}
   ]},
 { "hdr": "710", "rax": "77A", "fcm1": true, "dbg": true, "cmd": {"22": "2A53"}, "freq": 1,
   "signals": [
@@ -242,7 +250,8 @@
   ]},
 { "hdr": "710", "rax": "77A", "fcm1": true, "dbg": true, "cmd": {"22": "2AB8"}, "freq": 1,
   "signals": [
-    {"id": "AUDI_HVBAT_KWH", "path": "Battery", "fmt": {"bix": 16, "len": 16, "max": 1000000, "mul": 25, "unit": "watts" }, "name": "HV battery energy", "description": "Energy stored in the high voltage battery"}
+    {"id": "AUDI_HVBAT_KWH",       "path": "Battery", "fmt": {"bix": 16, "len": 16, "max": 1000000, "mul": 25,              "unit": "watts"         }, "name": "HV battery energy",         "description": "Energy stored in the high voltage battery"},
+    {"id": "AUDI_HVBAT_E_CONTENT", "path": "Battery", "fmt": {"bix": 16, "len": 16, "max": 1638.37, "mul": 25, "div": 1000, "unit": "kilowattHours" }, "name": "HV battery energy content", "description": "Energy stored in the high voltage battery"}
   ]},
 { "hdr": "710", "rax": "77A", "fcm1": true, "dbg": true, "cmd": {"22": "2AF7"}, "freq": 1,
   "signals": [
@@ -265,18 +274,21 @@
   "signals": [
     {"id": "AUDI_STEER_WHL_T", "path": "Tires", "fmt": { "len": 8, "max": 255, "unit": "celsius" }, "name": "Steering wheel temperature"}
   ]},
-{ "hdr": "712", "rax": "77C", "fcm1": true, "dbg": true, "cmd": {"22": "1805"}, "freq": 0.25,
+{ "hdr": "712", "rax": "77C", "fcm1": true, "dbg": true, "cmd": {"22": "1805"}, "freq": 5,
   "signals": [
-    {"id": "AUDI_STEER_WHL_TQ_SENS_1", "path": "Tires", "fmt": { "len": 16, "max": 144.0709, "min": -143.9553, "mul": 0.004395, "add": 0.06, "sign": true, "unit": "degrees" }, "name": "Steering wheel torque sensor 1"}
+    {"id": "AUDI_STEER_TQ_1",          "path": "Tires", "fmt": { "len": 16, "max": 144.0709, "min": -143.9553, "mul": 0.004395, "add": 0.06, "sign": true, "unit": "degrees" }, "name": "Steering wheel torque sensor 1"},
+    {"id": "AUDI_STEER_WHL_TQ_SENS_1", "path": "Tires", "fmt": { "len": 16, "max": 144,      "min": -143,      "mul": 0.004395, "add": 0.06, "sign": true, "unit": "degrees" }, "name": "Steering wheel torque sensor 1"}
   ]},
-{ "hdr": "712", "rax": "77C", "fcm1": true, "dbg": true, "cmd": {"22": "1806"}, "freq": 0.25,
+{ "hdr": "712", "rax": "77C", "fcm1": true, "dbg": true, "cmd": {"22": "1806"}, "freq": 5,
   "signals": [
-    {"id": "AUDI_STEER_WHL_TQ_SENS_2", "path": "Tires", "fmt": { "len": 16, "max": 144.0709, "min": -143.9553, "mul": 0.004395, "add": 0.06, "sign": true, "unit": "degrees" }, "name": "Steering wheel torque sensor 2"}
+    {"id": "AUDI_STEER_TQ_2",          "path": "Tires", "fmt": { "len": 16, "max": 144.0709, "min": -143.9553, "mul": 0.004395, "add": 0.06, "sign": true, "unit": "degrees" }, "name": "Steering wheel torque sensor 2"},
+    {"id": "AUDI_STEER_WHL_TQ_SENS_2", "path": "Tires", "fmt": { "len": 16, "max": 144,      "min": -143,      "mul": 0.004395, "add": 0.06, "sign": true, "unit": "degrees" }, "name": "Steering wheel torque sensor 2"}
   ]},
 { "hdr": "712", "rax": "77C", "fcm1": true, "dbg": true, "cmd": {"22": "1812"}, "freq": 1,
   "signals": [
     {"id": "AUDI_MQB_SWA",           "path": "Tires", "fmt": { "len": 16, "max": 4095.935, "min": -4095.94, "div": 8, "add": 0.06, "sign": true, "unit": "degrees" }, "name": "Steering wheel angle"},
-    {"id": "AUDI_STEER_WHEEL_ANGLE", "path": "Tires", "fmt": { "len": 16, "max": 4095.875, "min": -4096,    "div": 8,              "sign": true, "unit": "degrees" }, "name": "Steering wheel angle"}
+    {"id": "AUDI_STEER_ANGLE_EPS",   "path": "Tires", "fmt": { "len": 16, "max": 4095.875, "min": -4096,    "div": 8,              "sign": true, "unit": "degrees" }, "name": "Steering wheel angle"},
+    {"id": "AUDI_STEER_WHEEL_ANGLE", "path": "Tires", "fmt": { "len": 16, "max": 780,      "min": -780,     "div": 8, "add": -750,               "unit": "degrees" }, "name": "Steering wheel angle"}
   ]},
 { "hdr": "713", "dbg": true, "cmd": {"22": "1800"}, "freq": 0.25,
   "signals": [
@@ -381,11 +393,11 @@
     {"id": "AUDI_MQB_CSS_ODO_LAST", "path": "Control", "fmt": {"bix": 8,  "len": 24, "max": 1,              "unit": "kilometers"   }, "name": "Directional stability control last activation distance"},
     {"id": "AUDI_MQB_CSS_STR_TRQ",  "path": "Control", "fmt": {"bix": 32, "len": 16, "max": 1, "div": 1000, "unit": "newtonMeters" }, "name": "Directional stability control steering torque"}
   ]},
-{ "hdr": "713", "rax": "77D", "fcm1": true, "dbg": true, "cmd": {"22": "2005"}, "freq": 1,
+{ "hdr": "713", "rax": "77D", "fcm1": true, "dbg": true, "cmd": {"22": "2005"}, "freq": 5,
   "signals": [
     {"id": "AUDI_P_BRAKE_SERVO_UNIT", "path": "Control", "fmt": { "len": 16, "max": 2047.9375, "min": -2048, "div": 16, "sign": true, "unit": "unknown" }, "name": "Pressure in brake servo unit"}
   ]},
-{ "hdr": "713", "rax": "77D", "fcm1": true, "dbg": true, "cmd": {"22": "2B21"}, "freq": 1,
+{ "hdr": "713", "rax": "77D", "fcm1": true, "dbg": true, "cmd": {"22": "2B21"}, "freq": 5,
   "signals": [
     {"id": "AUDI_BRAKE_P_V2", "path": "Control", "fmt": { "len": 16, "max": 458.8288, "min": -543.8501, "mul": 152999, "div": 10000000, "add": -42.503, "sign": true, "unit": "bars" }, "name": "Brake pressure"}
   ]},
@@ -506,59 +518,11 @@
     {"id": "AUDI_PTC_HTR_FLUID_T1", "path": "Climate.Heater", "fmt": {"bix": 64, "len": 8, "max": 205,   "min": -50,           "add": -50, "unit": "celsius" }, "name": "Heater fluid temperature #1"},
     {"id": "AUDI_PTC_HTR_FLUID_T2", "path": "Climate.Heater", "fmt": {"bix": 72, "len": 8, "max": 205,   "min": -50,           "add": -50, "unit": "celsius" }, "name": "Heater fluid temperature #2"}
   ]},
-{ "hdr": "744", "dbg": true, "cmd": {"22": "15D3"}, "freq": 30,
-  "signals": [
-    {"id": "AUDI_CHG_AC_I_SET", "path": "Battery", "fmt": { "len": 8, "max": 25.5, "div": 10, "unit": "amps" }, "name": "Charger AC input current setpoint"}
-  ]},
-{ "hdr": "744", "dbg": true, "cmd": {"22": "15D8"}, "freq": 5,
-  "signals": [
-    {"id": "AUDI_CHG_T", "path": "Battery", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Charger temperature"}
-  ]},
-{ "hdr": "744", "dbg": true, "cmd": {"22": "15D9"}, "freq": 5,
-  "signals": [
-    {"id": "AUDI_CHG_PFC_COIL_T", "path": "Battery", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Charger power factor coil temperature"}
-  ]},
-{ "hdr": "744", "dbg": true, "cmd": {"22": "15DA"}, "freq": 5,
-  "signals": [
-    {"id": "AUDI_CHG_DCDC_COIL_T", "path": "Battery", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Charger DC to DC coil temperature"}
-  ]},
-{ "hdr": "744", "dbg": true, "cmd": {"22": "15DB"}, "freq": 30,
-  "signals": [
-    {"id": "AUDI_CHG_LINK_V", "path": "Battery", "fmt": { "len": 8, "max": 25.5, "div": 10, "unit": "volts" }, "name": "Charger DC link voltage"}
-  ]},
-{ "hdr": "744", "dbg": true, "cmd": {"22": "15DC"}, "freq": 30,
-  "signals": [
-    {"id": "AUDI_CHG_PFC_GATE_V", "path": "Battery", "fmt": { "len": 8, "max": 25.5, "div": 10, "unit": "volts" }, "name": "Charger power factor gate driver voltage"}
-  ]},
-{ "hdr": "744", "dbg": true, "cmd": {"22": "15DD"}, "freq": 30,
-  "signals": [
-    {"id": "AUDI_CHG_DCDC_GATE_V", "path": "Battery", "fmt": { "len": 8, "max": 25.5, "div": 10, "unit": "volts" }, "name": "Charger DC to DC gate driver voltage"}
-  ]},
-{ "hdr": "744", "dbg": true, "cmd": {"22": "15EC"}, "freq": 0.25,
-  "signals": [
-    {"id": "AUDI_CHG_DCDC_LINE_T", "path": "Battery", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Charger DC to DC power line temperature"}
-  ]},
-{ "hdr": "744", "dbg": true, "cmd": {"22": "1DA8"}, "freq": 0.25,
-  "signals": [
-    {"id": "AUDI_CHG_AC_I", "path": "Battery", "fmt": { "len": 8, "max": 25.5, "div": 10, "unit": "amps" }, "name": "Charger AC input current"}
-  ]},
-{ "hdr": "744", "dbg": true, "cmd": {"22": "1DA9"}, "freq": 30,
-  "signals": [
-    {"id": "AUDI_CHG_AC_V", "path": "Battery", "fmt": {"bix": 8, "len": 8, "max": 255, "unit": "volts" }, "name": "Charger AC input voltage"}
-  ]},
-{ "hdr": "744", "dbg": true, "cmd": {"22": "4237"}, "freq": 0.25,
-  "signals": [
-    {"id": "AUDI_CHG_HV_I", "path": "Battery", "fmt": {"bix": 8, "len": 8, "max": 63.749, "div": 4, "unit": "amps" }, "name": "Charger output current"}
-  ]},
-{ "hdr": "744", "dbg": true, "cmd": {"22": "4238"}, "freq": 30,
-  "signals": [
-    {"id": "AUDI_CHG_HV_I_SET", "path": "Battery", "fmt": {"bix": 8, "len": 8, "max": 63.749, "div": 4, "unit": "amps" }, "name": "Charger output current setpoint"}
-  ]},
-{ "hdr": "744", "rax": "7AE", "fcm1": true, "dbg": true, "cmd": {"22": "103D"}, "freq": 1,
+{ "hdr": "744", "rax": "7AE", "fcm1": true, "dbg": true, "cmd": {"22": "103D"}, "freq": 5,
   "signals": [
     {"id": "AUDI_OBC_HVDC_C", "path": "Battery", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "amps" }, "name": "On-board charger, hv/dc current"}
   ]},
-{ "hdr": "744", "rax": "7AE", "fcm1": true, "dbg": true, "cmd": {"22": "103E"}, "freq": 1,
+{ "hdr": "744", "rax": "7AE", "fcm1": true, "dbg": true, "cmd": {"22": "103E"}, "freq": 5,
   "signals": [
     {"id": "AUDI_OBC_CYCLE_ENERGY", "path": "Battery", "fmt": { "len": 16, "max": 655.35, "div": 100, "unit": "kilowattHours" }, "name": "Cycle energy transformation"}
   ]},
@@ -568,7 +532,7 @@
     {"id": "AUDI_CHRGR_RAIL2_E", "path": "Battery", "fmt": {"bix": 24, "len": 24, "max": 1677721, "div": 10, "unit": "kilowattHours" }, "name": "Rail 2 energy transformation"},
     {"id": "AUDI_CHRGR_RAIL3_E", "path": "Battery", "fmt": {"bix": 48, "len": 24, "max": 1677721, "div": 10, "unit": "kilowattHours" }, "name": "Rail 3 energy transformation"}
   ]},
-{ "hdr": "744", "rax": "7AE", "fcm1": true, "dbg": true, "cmd": {"22": "1525"}, "freq": 1,
+{ "hdr": "744", "rax": "7AE", "fcm1": true, "dbg": true, "cmd": {"22": "1525"}, "freq": 5,
   "signals": [
     {"id": "AUDI_OBC_V_PROX_A", "path": "Battery", "fmt": { "len": 16, "max": 65535, "unit": "millivolts" }, "name": "Voltage proximity, socket a"}
   ]},
@@ -600,6 +564,10 @@
   "signals": [
     {"id": "AUDI_CHRGR_BOOST_CMD_I", "path": "Battery", "fmt": { "len": 16, "max": 15871.75, "min": -512, "div": 4, "add": -512, "unit": "amps" }, "name": "HV booster, commanded current"}
   ]},
+{ "hdr": "744", "rax": "7AE", "dbg": true, "cmd": {"22": "15D3"}, "freq": 30,
+  "signals": [
+    {"id": "AUDI_CHG_AC_I_SET", "path": "Battery", "fmt": { "len": 8, "max": 25.5, "div": 10, "unit": "amps" }, "name": "Charger AC input current set point"}
+  ]},
 { "hdr": "744", "rax": "7AE", "fcm1": true, "din": "03", "dbg": true, "cmd": {"22": "15D5"}, "freq": 1,
   "signals": [
     {"id": "AUDI_CHRGR_PWR_MAX", "path": "Battery", "fmt": { "len": 16, "max": 65535, "unit": "amps" }, "name": "Maximum charging power"}
@@ -609,6 +577,30 @@
     {"id": "AUDI_CHRGR_EFFICIENCY", "path": "Battery", "fmt": { "len": 8, "max": 100.5,   "min": 75, "div": 10, "add": 75, "unit": "amps"    }, "name": "Power efficiency"},
     {"id": "AUDI_CHG_EFFICIENCY",   "path": "Battery", "fmt": { "len": 8, "max": 100.499,            "div": 10, "add": 75, "unit": "percent" }, "name": "Charging efficiency"}
   ]},
+{ "hdr": "744", "rax": "7AE", "dbg": true, "cmd": {"22": "15D8"}, "freq": 5,
+  "signals": [
+    {"id": "AUDI_CHG_T", "path": "Battery", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Charger temperature"}
+  ]},
+{ "hdr": "744", "rax": "7AE", "dbg": true, "cmd": {"22": "15D9"}, "freq": 5,
+  "signals": [
+    {"id": "AUDI_CHG_PFC_COIL_T", "path": "Battery", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Charger power factor coil temperature"}
+  ]},
+{ "hdr": "744", "rax": "7AE", "dbg": true, "cmd": {"22": "15DA"}, "freq": 5,
+  "signals": [
+    {"id": "AUDI_CHG_DCDC_COIL_T", "path": "Battery", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Charger DC to DC coil temperature"}
+  ]},
+{ "hdr": "744", "rax": "7AE", "dbg": true, "cmd": {"22": "15DB"}, "freq": 30,
+  "signals": [
+    {"id": "AUDI_CHG_LINK_V", "path": "Battery", "fmt": { "len": 8, "max": 25.5, "div": 10, "unit": "volts" }, "name": "Charger DC link voltage"}
+  ]},
+{ "hdr": "744", "rax": "7AE", "dbg": true, "cmd": {"22": "15DC"}, "freq": 30,
+  "signals": [
+    {"id": "AUDI_CHG_PFC_GATE_V", "path": "Battery", "fmt": { "len": 8, "max": 25.5, "div": 10, "unit": "volts" }, "name": "Charger power factor gate driver voltage"}
+  ]},
+{ "hdr": "744", "rax": "7AE", "dbg": true, "cmd": {"22": "15DD"}, "freq": 30,
+  "signals": [
+    {"id": "AUDI_CHG_DCDC_GATE_V", "path": "Battery", "fmt": { "len": 8, "max": 25.5, "div": 10, "unit": "volts" }, "name": "Charger DC to DC gate driver voltage"}
+  ]},
 { "hdr": "744", "rax": "7AE", "fcm1": true, "din": "03", "dbg": true, "cmd": {"22": "15E1"}, "freq": 1,
   "signals": [
     {"id": "AUDI_CHRGR_PWR_LOSS", "path": "Battery", "fmt": { "len": 8, "max": 5100, "mul": 20, "unit": "unknown" }, "name": "Power loss battery charger"},
@@ -617,6 +609,10 @@
 { "hdr": "744", "rax": "7AE", "fcm1": true, "din": "03", "dbg": true, "cmd": {"22": "15E2"}, "freq": 1,
   "signals": [
     {"id": "AUDI_CHRGR_COOLANT_T", "path": "Battery", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Charger coolant temperature"}
+  ]},
+{ "hdr": "744", "rax": "7AE", "dbg": true, "cmd": {"22": "15EC"}, "freq": 5,
+  "signals": [
+    {"id": "AUDI_CHG_DCDC_LINE_T", "path": "Battery", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Charger DC to DC power line temperature"}
   ]},
 { "hdr": "744", "rax": "7AE", "fcm1": true, "din": "03", "dbg": true, "cmd": {"22": "15EE"}, "freq": 1,
   "signals": [
@@ -635,6 +631,14 @@
     {"id": "AUDI_CHRGR_V_OUT",       "path": "Battery", "fmt": { "len": 8,  "max": 255,               "unit": "volts" }, "name": "HV charger output voltage"},
     {"id": "AUDI_OBC_HIGH_V_OUTPUT", "path": "Battery", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "volts" }, "name": "High voltage output"}
   ]},
+{ "hdr": "744", "rax": "7AE", "dbg": true, "cmd": {"22": "1DA8"}, "freq": 5,
+  "signals": [
+    {"id": "AUDI_CHG_AC_I", "path": "Battery", "fmt": { "len": 8, "max": 25.5, "div": 10, "unit": "amps" }, "name": "Charger AC input current"}
+  ]},
+{ "hdr": "744", "rax": "7AE", "dbg": true, "cmd": {"22": "1DA9"}, "freq": 30,
+  "signals": [
+    {"id": "AUDI_CHG_AC_V", "path": "Battery", "fmt": {"bix": 8, "len": 8, "max": 255, "unit": "volts" }, "name": "Charger AC input voltage"}
+  ]},
 { "hdr": "744", "rax": "7AE", "fcm1": true, "din": "03", "dbg": true, "cmd": {"22": "1DD0"}, "freq": 1,
   "signals": [
     {"id": "AUDI_CHRGR_SOC_DISP", "path": "Battery", "fmt": { "len": 8, "max": 100, "div": 2, "unit": "percent" }, "name": "HV battery state of charge display"}
@@ -643,9 +647,17 @@
   "signals": [
     {"id": "AUDI_CHRGR_CHG_PWR_MAX", "path": "Battery", "fmt": { "len": 16, "max": 65535, "unit": "unknown" }, "name": "Maximum charge power"}
   ]},
-{ "hdr": "744", "rax": "7AE", "fcm1": true, "dbg": true, "cmd": {"22": "1DDA"}, "freq": 1,
+{ "hdr": "744", "rax": "7AE", "fcm1": true, "dbg": true, "cmd": {"22": "1DDA"}, "freq": 5,
   "signals": [
     {"id": "AUDI_OBC_T_A", "path": "Battery", "fmt": {"bix": 8, "len": 16, "max": 6498.5, "min": -55, "div": 10, "add": -55, "unit": "celsius" }, "name": "Temperature sensor, socket a"}
+  ]},
+{ "hdr": "744", "rax": "7AE", "dbg": true, "cmd": {"22": "4237"}, "freq": 5,
+  "signals": [
+    {"id": "AUDI_CHG_HV_I", "path": "Battery", "fmt": {"bix": 8, "len": 8, "max": 63.749, "div": 4, "unit": "amps" }, "name": "Charger output current"}
+  ]},
+{ "hdr": "744", "rax": "7AE", "dbg": true, "cmd": {"22": "4238"}, "freq": 30,
+  "signals": [
+    {"id": "AUDI_CHG_HV_I_SET", "path": "Battery", "fmt": {"bix": 8, "len": 8, "max": 63.749, "div": 4, "unit": "amps" }, "name": "Charger output current set point"}
   ]},
 { "hdr": "744", "rax": "7AE", "fcm1": true, "dbg": true, "cmd": {"22": "4965"}, "freq": 0.25,
   "signals": [
@@ -656,9 +668,9 @@
     {"id": "AUDI_WNDSHLD_TEMP",    "path": "Climate", "fmt": {           "len": 8, "max": 108.08, "min": -38.8, "mul": 0.576,           "add": -38.8, "unit": "celsius" }, "name": "Windshield temperature"},
     {"id": "AUDI_HVAC_INSIDE_HUM", "path": "Climate", "fmt": {"bix": 32, "len": 8, "max": 100,                                "div": 2,               "unit": "percent" }, "name": "Inside humidity"}
   ]},
-{ "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "0800"}, "freq": 1,
+{ "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "0800"}, "freq": 5,
   "signals": [
-    {"id": "AUDI_AC_COMPRESSOR_PWR_ACT", "path": "Climate", "fmt": {"bix": 40, "len": 16, "max": 65535, "unit": "watts" }, "name": "A/C compressor power, actual"}
+    {"id": "AUDI_AC_CMPR_PWR_ACT", "path": "Climate", "fmt": {"bix": 40, "len": 16, "max": 65535, "unit": "watts" }, "name": "A/C compressor power, actual"}
   ]},
 { "hdr": "746", "rax": "7B0", "fcm1": true, "din": "03", "dbg": true, "cmd": {"22": "2603"}, "freq": 1,
   "signals": [
@@ -690,14 +702,14 @@
 { "hdr": "746", "rax": "7B0", "fcm1": true, "din": "03", "dbg": true, "cmd": {"22": "2609"}, "freq": 1,
   "signals": [
     {"id": "AUDI_PQ35_OUT_T",     "path": "Engine",  "fmt": { "len": 8,  "max": 63.5,   "min": -64,                 "div": 2,              "sign": true, "unit": "celsius" }, "name": "Outside temperature"},
-    {"id": "AUDI_HVAC_OUTSIDE_T", "path": "Engine",  "fmt": { "len": 16, "max": 3276.7, "min": -3276.8,             "div": 10,             "sign": true, "unit": "celsius" }, "name": "Outside temperature"},
+    {"id": "AUDI_HVAC_OUTSIDE_T", "path": "Climate", "fmt": { "len": 16, "max": 3276.7, "min": -3276.8,             "div": 10,             "sign": true, "unit": "celsius" }, "name": "Outside temperature"},
     {"id": "AUDI_AAT_V2",         "path": "Climate", "fmt": { "len": 8,  "max": 63.5,   "min": -64,     "mul": 0.5,                        "sign": true, "unit": "celsius" }, "name": "Outside temperature"},
     {"id": "AUDI_AAT_746",        "path": "Climate", "fmt": { "len": 8,  "max": 77.5,   "min": -50,                 "div": 2,  "add": -50,               "unit": "celsius" }, "name": "Outside temperature"}
   ]},
-{ "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "260A"}, "freq": 1,
+{ "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "260A"}, "freq": 5,
   "signals": [
-    {"id": "AUDI_AAT_CABIN",        "path": "Engine", "fmt": { "len": 8, "max": 77.5, "min": -50, "mul": 0.5,           "add": -50,               "unit": "celsius" }, "name": "Outside temperature, from cabin sensor"},
-    {"id": "AUDI_OUTSIDE_T_SYSTEM", "path": "Engine", "fmt": { "len": 8, "max": 63.5, "min": -64,             "div": 2,             "sign": true, "unit": "celsius" }, "name": "Outside temperature, system calculated"}
+    {"id": "AUDI_AAT_CABIN",        "path": "Climate", "fmt": { "len": 8, "max": 77.5, "min": -50, "div": 2, "add": -50,               "unit": "celsius" }, "name": "Outside temperature, from cabin sensor"},
+    {"id": "AUDI_OUTSIDE_T_SYSTEM", "path": "Engine",  "fmt": { "len": 8, "max": 63.5, "min": -64, "div": 2,             "sign": true, "unit": "celsius" }, "name": "Outside temperature, system calculated"}
   ]},
 { "hdr": "746", "rax": "7B0", "fcm1": true, "din": "03", "dbg": true, "cmd": {"22": "260C"}, "freq": 1,
   "signals": [
@@ -717,7 +729,7 @@
 { "hdr": "746", "rax": "7B0", "fcm1": true, "din": "03", "dbg": true, "cmd": {"22": "2612"}, "freq": 1,
   "signals": [
     {"id": "AUDI_PQ35_EVAP_OUT_T",    "path": "Engine",  "fmt": { "len": 8,  "max": 42.291, "min": -42.624, "mul": 0.333,            "sign": true, "unit": "celsius" }, "name": "Temperature after evaporator"},
-    {"id": "AUDI_HVAC_EVAP_T",        "path": "Engine",  "fmt": { "len": 16, "max": 3276.7, "min": -3276.8,               "div": 10, "sign": true, "unit": "celsius" }, "name": "Evaporator output temperature"},
+    {"id": "AUDI_HVAC_EVAP_T",        "path": "Climate", "fmt": { "len": 16, "max": 3276.7, "min": -3276.8,               "div": 10, "sign": true, "unit": "celsius" }, "name": "Evaporator output temperature"},
     {"id": "AUDI_T_AFTER_EVAPORATOR", "path": "Climate", "fmt": { "len": 8,  "max": 42.291, "min": -42.624,               "div": 3,  "sign": true, "unit": "celsius" }, "name": "Temperature after evaporator"}
   ]},
 { "hdr": "746", "rax": "7B0", "fcm1": true, "din": "03", "dbg": true, "cmd": {"22": "2613"}, "freq": 1,
@@ -727,8 +739,9 @@
   ]},
 { "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "261E"}, "freq": 1,
   "signals": [
-    {"id": "AUDI_MQB_RECIRC_FLAP_ACT", "path": "Climate", "fmt": {           "len": 16, "max": 65535,             "unit": "scalar"  }, "name": "Recirculation flap actual position"},
-    {"id": "AUDI_RECIRC_FLAP_ACT_PCT", "path": "Climate", "fmt": {"bix": 16, "len": 8,  "max": 100,   "mul": 0.5, "unit": "percent" }, "name": "Recirculation flap, actual"}
+    {"id": "AUDI_MQB_RECIRC_FLAP_ACT", "path": "Climate", "fmt": {           "len": 16, "max": 65535,                       "unit": "scalar"  }, "name": "Recirculation flap actual position"},
+    {"id": "AUDI_RECIRC_ACT_PCT",      "path": "Climate", "fmt": {"bix": 16, "len": 8,  "max": 100,               "div": 2, "unit": "percent" }, "name": "Recirculation flap, actual"},
+    {"id": "AUDI_RECIRC_FLAP_ACT_PCT", "path": "Climate", "fmt": {"bix": 16, "len": 8,  "max": 100,   "mul": 0.5,           "unit": "percent" }, "name": "Recirculation flap, actual"}
   ]},
 { "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "261F"}, "freq": 1,
   "signals": [
@@ -771,15 +784,15 @@
   "signals": [
     {"id": "AUDI_PQ35_AC_COMP_PWR", "path": "Climate", "fmt": {"bix": 16, "len": 8, "max": 10.2, "div": 25, "unit": "kilowatts" }, "name": "Air conditioning compressor power consumption"}
   ]},
-{ "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "42DB"}, "freq": 1,
+{ "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "42DB"}, "freq": 5,
   "signals": [
-    {"id": "AUDI_CO2_CONTENT_INTERIOR", "path": "Climate", "fmt": {"bix": 8, "len": 8, "max": 25500, "mul": 100, "unit": "scalar" }, "name": "CO2 content interior"}
+    {"id": "AUDI_CABIN_CO2", "path": "Climate", "fmt": {"bix": 8, "len": 8, "max": 25500, "mul": 100, "unit": "scalar" }, "name": "CO2 content interior"}
   ]},
 { "hdr": "746", "rax": "7B0", "fcm1": true, "din": "03", "dbg": true, "cmd": {"22": "482B"}, "freq": 1,
   "signals": [
     {"id": "AUDI_PQ35_AC_CLUTCH", "path": "Transmission", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Air conditioning clutch engagement"}
   ]},
-{ "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "4EEF"}, "freq": 1,
+{ "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "4EEF"}, "freq": 5,
   "signals": [
     {"id": "AUDI_AC_REFRIG_P_SENS1",     "path": "Climate", "fmt": {           "len": 16, "max": 576.708,             "mul": 88, "div": 10000,             "unit": "bars"    }, "name": "A/C refrigerant pressure, sensor 1"},
     {"id": "AUDI_AC_REFRIG_T_SENS1",     "path": "Climate", "fmt": {"bix": 16, "len": 16, "max": 6513.5,  "min": -40, "mul": 10, "div": 100,   "add": -40, "unit": "celsius" }, "name": "A/C refrigerant temperature, sensor 1"},
@@ -4665,38 +4678,6 @@
   "signals": [
     {"id": "AUDI_INPUT_SHFT_SPD_2", "path": "Movement", "fmt": { "len": 16, "max": 7000, "min": -32769, "add": -1, "sign": true, "unit": "rpm" }, "name": "Input shaft speed 2"}
   ]},
-{ "hdr": "7E5", "dbg": true, "cmd": {"22": "1E17"}, "freq": 5,
-  "signals": [
-    {"id": "AUDI_HV_ISO_POS_SYS", "path": "Battery", "fmt": { "len": 16, "max": 655350, "mul": 10, "unit": "kiloohms" }, "name": "HV system isolation resistance, positive"}
-  ]},
-{ "hdr": "7E5", "dbg": true, "cmd": {"22": "1E18"}, "freq": 5,
-  "signals": [
-    {"id": "AUDI_HVBAT_ISO_POS", "path": "Battery", "fmt": { "len": 16, "max": 655350, "mul": 10, "unit": "kiloohms" }, "name": "HV battery isolation resistance, positive"}
-  ]},
-{ "hdr": "7E5", "dbg": true, "cmd": {"22": "1E19"}, "freq": 5,
-  "signals": [
-    {"id": "AUDI_HV_ISO_NEG_SYS", "path": "Battery", "fmt": { "len": 16, "max": 655350, "mul": 10, "unit": "kiloohms" }, "name": "HV system isolation resistance, negative"}
-  ]},
-{ "hdr": "7E5", "dbg": true, "cmd": {"22": "1E1A"}, "freq": 5,
-  "signals": [
-    {"id": "AUDI_HVBAT_ISO_NEG", "path": "Battery", "fmt": { "len": 16, "max": 655350, "mul": 10, "unit": "kiloohms" }, "name": "HV battery isolation resistance, negative"}
-  ]},
-{ "hdr": "7E5", "dbg": true, "cmd": {"22": "1E35"}, "freq": 1,
-  "signals": [
-    {"id": "AUDI_HVBAT_NEG_V_PRE", "path": "Battery", "fmt": { "len": 16, "max": 1023.968, "min": -1024, "div": 32, "sign": true, "unit": "volts" }, "name": "HV battery negative voltage before the contactors"}
-  ]},
-{ "hdr": "7E5", "dbg": true, "cmd": {"22": "1E36"}, "freq": 1,
-  "signals": [
-    {"id": "AUDI_HVBAT_POS_V_PRE", "path": "Battery", "fmt": { "len": 16, "max": 2047.968, "div": 32, "unit": "volts" }, "name": "HV battery positive voltage before the contactors"}
-  ]},
-{ "hdr": "7E5", "dbg": true, "cmd": {"22": "1E39"}, "freq": 1,
-  "signals": [
-    {"id": "AUDI_HVBAT_POS_V_POST_CHG", "path": "Battery", "fmt": { "len": 16, "max": 2047.937, "min": -2048, "div": 16, "sign": true, "unit": "volts" }, "name": "HV battery positive voltage after the charging contactors"}
-  ]},
-{ "hdr": "7E5", "dbg": true, "cmd": {"22": "1E3C"}, "freq": 30,
-  "signals": [
-    {"id": "AUDI_HVBAT_CELL_SUM_V", "path": "Battery", "fmt": { "len": 24, "max": 4095.999, "div": 4096, "unit": "volts" }, "name": "HV battery cell voltage sum"}
-  ]},
 { "hdr": "7E5", "dbg": true, "cmd": {"22": "1E40"}, "freq": 30,
   "signals": [
     {"id": "AUDI_HVBAT_CELL_1_V", "path": "Battery", "fmt": { "len": 16, "max": 15.999, "div": 4096, "unit": "volts" }, "name": "HV battery cell 1 voltage"}
@@ -5105,89 +5086,9 @@
   "signals": [
     {"id": "AUDI_HVBAT_CELL_102_V", "path": "Battery", "fmt": { "len": 16, "max": 15.999, "div": 4096, "unit": "volts" }, "name": "HV battery cell 102 voltage"}
   ]},
-{ "hdr": "7E5", "dbg": true, "cmd": {"22": "1EAE"}, "freq": 5,
-  "signals": [
-    {"id": "AUDI_HVBAT_T_1", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 1"}
-  ]},
-{ "hdr": "7E5", "dbg": true, "cmd": {"22": "1EAF"}, "freq": 5,
-  "signals": [
-    {"id": "AUDI_HVBAT_T_2", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 2"}
-  ]},
-{ "hdr": "7E5", "dbg": true, "cmd": {"22": "1EB0"}, "freq": 5,
-  "signals": [
-    {"id": "AUDI_HVBAT_T_3", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 3"}
-  ]},
-{ "hdr": "7E5", "dbg": true, "cmd": {"22": "1EB1"}, "freq": 5,
-  "signals": [
-    {"id": "AUDI_HVBAT_T_4", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 4"}
-  ]},
-{ "hdr": "7E5", "dbg": true, "cmd": {"22": "1EB2"}, "freq": 5,
-  "signals": [
-    {"id": "AUDI_HVBAT_T_5", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 5"}
-  ]},
-{ "hdr": "7E5", "dbg": true, "cmd": {"22": "1EB3"}, "freq": 5,
-  "signals": [
-    {"id": "AUDI_HVBAT_T_6", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 6"}
-  ]},
-{ "hdr": "7E5", "dbg": true, "cmd": {"22": "1EB4"}, "freq": 5,
-  "signals": [
-    {"id": "AUDI_HVBAT_T_7", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 7"}
-  ]},
-{ "hdr": "7E5", "dbg": true, "cmd": {"22": "1EB5"}, "freq": 5,
-  "signals": [
-    {"id": "AUDI_HVBAT_T_8", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 8"}
-  ]},
-{ "hdr": "7E5", "dbg": true, "cmd": {"22": "1EB6"}, "freq": 5,
-  "signals": [
-    {"id": "AUDI_HVBAT_T_9", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 9"}
-  ]},
-{ "hdr": "7E5", "dbg": true, "cmd": {"22": "1EB7"}, "freq": 5,
-  "signals": [
-    {"id": "AUDI_HVBAT_T_10", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 10"}
-  ]},
-{ "hdr": "7E5", "dbg": true, "cmd": {"22": "1EB8"}, "freq": 5,
-  "signals": [
-    {"id": "AUDI_HVBAT_T_11", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 11"}
-  ]},
-{ "hdr": "7E5", "dbg": true, "cmd": {"22": "1EB9"}, "freq": 5,
-  "signals": [
-    {"id": "AUDI_HVBAT_T_12", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 12"}
-  ]},
-{ "hdr": "7E5", "dbg": true, "cmd": {"22": "1EBA"}, "freq": 5,
-  "signals": [
-    {"id": "AUDI_HVBAT_T_13", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 13"}
-  ]},
-{ "hdr": "7E5", "dbg": true, "cmd": {"22": "1EBC"}, "freq": 5,
-  "signals": [
-    {"id": "AUDI_HVBAT_T_15", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 15"}
-  ]},
-{ "hdr": "7E5", "dbg": true, "cmd": {"22": "1EBD"}, "freq": 5,
-  "signals": [
-    {"id": "AUDI_HVBAT_T_16", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 16"}
-  ]},
-{ "hdr": "7E5", "dbg": true, "cmd": {"22": "2A0B"}, "freq": 5,
-  "signals": [
-    {"id": "AUDI_HVBAT_T", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature"}
-  ]},
 { "hdr": "7E5", "dbg": true, "cmd": {"22": "5200"}, "freq": 3600,
   "signals": [
     {"id": "AUDI_LAUNCH", "path": "Stats", "fmt": { "len": 32, "max": 1000000, "unit": "scalar" }, "name": "Launch control count", "description": "How many times you've initiated launch control on the car."}
-  ]},
-{ "hdr": "7E5", "dbg": true, "cmd": {"22": "7425"}, "freq": 5,
-  "signals": [
-    {"id": "AUDI_HVBAT_T_17", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 17"}
-  ]},
-{ "hdr": "7E5", "dbg": true, "cmd": {"22": "74B9"}, "freq": 1,
-  "signals": [
-    {"id": "AUDI_HV_INTERLOCK_DET_V", "path": "Battery", "fmt": { "len": 16, "max": 20.004, "div": 3276, "unit": "volts" }, "name": "HV interlock detector voltage"}
-  ]},
-{ "hdr": "7E5", "dbg": true, "cmd": {"22": "74BA"}, "freq": 1,
-  "signals": [
-    {"id": "AUDI_HV_INTERLOCK_SRC_V", "path": "Battery", "fmt": { "len": 16, "max": 20.004, "div": 3276, "unit": "volts" }, "name": "HV interlock source voltage"}
-  ]},
-{ "hdr": "7E5", "dbg": true, "cmd": {"22": "74BC"}, "freq": 0.25,
-  "signals": [
-    {"id": "AUDI_HV_INTERLOCK_SRC_I", "path": "Battery", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "milliamps" }, "name": "HV interlock source current"}
   ]},
 { "hdr": "7E5", "rax": "7ED", "din": "03", "dbg": true, "cmd": {"22": "028C"}, "freq": 1,
   "signals": [
@@ -5201,6 +5102,14 @@
 { "hdr": "7E5", "rax": "7ED", "din": "03", "dbg": true, "cmd": {"22": "1802"}, "freq": 0.25,
   "signals": [
     {"id": "AUDI_BMS_I", "path": "Battery", "fmt": { "len": 16, "max": 166269, "min": -1500, "mul": 2.56, "add": -1500, "nullmin": -1500, "unit": "amps" }, "name": "HV battery current", "suggestedMetric": "tractionBatteryCurrent"}
+  ]},
+{ "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "180A"}, "freq": 1,
+  "signals": [
+    {"id": "AUDI_HVBAT_V_180A", "path": "Battery", "fmt": { "len": 16, "max": 6553, "div": 10, "unit": "volts" }, "name": "HV battery voltage, measurement 2", "description": "Reads within 1 V of the pack voltage on 1801; which point of the pack it measures is not known."}
+  ]},
+{ "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "180B"}, "freq": 1,
+  "signals": [
+    {"id": "AUDI_HVBAT_V_180B", "path": "Battery", "fmt": { "len": 16, "max": 6553, "div": 10, "unit": "volts" }, "name": "HV battery voltage, measurement 3", "description": "Reads within 1 V of the pack voltage on 1801; which point of the pack it measures is not known."}
   ]},
 { "hdr": "7E5", "rax": "7ED", "din": "03", "dbg": true, "cmd": {"22": "180C"}, "freq": 1,
   "signals": [
@@ -5221,6 +5130,14 @@
 { "hdr": "7E5", "rax": "7ED", "din": "03", "dbg": true, "cmd": {"22": "1810"}, "freq": 1,
   "signals": [
     {"id": "AUDI_BMS_BMCE_T_CAN", "path": "Engine", "fmt": { "len": 8, "max": 205, "min": -40, "div": 2, "add": -40, "unit": "celsius" }, "name": "BMC-E temperature, 4"}
+  ]},
+{ "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "1818"}, "freq": 1,
+  "signals": [
+    {"id": "AUDI_HVBAT_V_1818", "path": "Battery", "fmt": { "len": 16, "max": 6553, "div": 10, "unit": "volts" }, "name": "HV battery voltage, measurement 4", "description": "Reads within 1 V of the pack voltage on 1801; which point of the pack it measures is not known."}
+  ]},
+{ "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "181B"}, "freq": 1,
+  "signals": [
+    {"id": "AUDI_HVBAT_V_181B", "path": "Battery", "fmt": { "len": 16, "max": 6553, "div": 10, "unit": "volts" }, "name": "HV battery voltage, measurement 5", "description": "Reads within 1 V of the pack voltage on 1801; which point of the pack it measures is not known."}
   ]},
 { "hdr": "7E5", "rax": "7ED", "din": "03", "dbg": true, "cmd": {"22": "181C"}, "freq": 1,
   "signals": [
@@ -5981,6 +5898,22 @@
   "signals": [
     {"id": "AUDI_BMS_T_AVG", "path": "Battery", "fmt": { "len": 8, "max": 155, "min": -100, "add": -100, "unit": "celsius" }, "name": "HV battery temperature, average"}
   ]},
+{ "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "1E17"}, "freq": 5,
+  "signals": [
+    {"id": "AUDI_HV_ISO_POS_SYS", "path": "Battery", "fmt": { "len": 16, "max": 655350, "mul": 10, "unit": "kiloohms" }, "name": "HV system isolation resistance, positive"}
+  ]},
+{ "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "1E18"}, "freq": 5,
+  "signals": [
+    {"id": "AUDI_HVBAT_ISO_POS", "path": "Battery", "fmt": { "len": 16, "max": 655350, "mul": 10, "unit": "kiloohms" }, "name": "HV battery isolation resistance, positive"}
+  ]},
+{ "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "1E19"}, "freq": 5,
+  "signals": [
+    {"id": "AUDI_HV_ISO_NEG_SYS", "path": "Battery", "fmt": { "len": 16, "max": 655350, "mul": 10, "unit": "kiloohms" }, "name": "HV system isolation resistance, negative"}
+  ]},
+{ "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "1E1A"}, "freq": 5,
+  "signals": [
+    {"id": "AUDI_HVBAT_ISO_NEG", "path": "Battery", "fmt": { "len": 16, "max": 655350, "mul": 10, "unit": "kiloohms" }, "name": "HV battery isolation resistance, negative"}
+  ]},
 { "hdr": "7E5", "rax": "7ED", "din": "03", "dbg": true, "cmd": {"22": "1E1B"}, "freq": 1,
   "signals": [
     {"id": "AUDI_BMS_I_CHG_LIM_DYN", "path": "Battery", "fmt": { "len": 16, "max": 65535, "unit": "amps" }, "name": "Maximum dynamic charge current limit"},
@@ -6011,12 +5944,12 @@
     {"id": "AUDI_BMS_CELL_SOC_MIN",     "path": "Battery", "fmt": {          "len": 8, "max": 100, "unit": "percent" }, "name": "Cell state of charge min, value"},
     {"id": "AUDI_BMS_CELL_SOC_MIN_IDX", "path": "Battery", "fmt": {"bix": 8, "len": 8, "max": 255, "unit": "scalar"  }, "name": "Cell state of charge min, index"}
   ]},
-{ "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "1E32"}, "freq": 1,
+{ "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "1E32"}, "freq": 5,
   "signals": [
     {"id": "AUDI_HVBAT_TOT_AH_CHRG",   "path": "Battery", "fmt": {           "len": 32, "max": 7818700,                        "div": 549.31642,                "unit": "ampereHours"   }, "name": "HV battery total ampere hours of charge"},
     {"id": "AUDI_HVBAT_TOT_AH_DCHRG",  "path": "Battery", "fmt": {"bix": 32, "len": 32, "max": 3909350,    "min": -3909350,    "div": 549.31642,  "sign": true, "unit": "ampereHours"   }, "name": "HV battery total ampere hours of discharge"},
     {"id": "AUDI_HVBAT_TOT_KWH_CHRG",  "path": "Battery", "fmt": {"bix": 64, "len": 32, "max": 500300,                         "div": 8583.07212,               "unit": "kilowattHours" }, "name": "HV battery total kilowatt hours of charge"},
-    {"id": "AUDI_HVBAT_TOT_KWH_DCHRG", "path": "Battery", "fmt": {"bix": 96, "len": 32, "max": 250300,     "min": -250300,     "div": 8583.07212, "sign": true, "unit": "kilowattHours" }, "name": "HV battery total kilowatt hours of discharge"},
+    {"id": "AUDI_HVBAT_TOT_KWH_DCHRG", "path": "Battery", "fmt": {"bix": 96, "len": 32, "max": 250199,     "min": -250199,     "div": 8583.07212, "sign": true, "unit": "kilowattHours" }, "name": "HV battery total kilowatt hours of discharge"},
     {"id": "AUDI_HVBAT_KWH_DISCHG",    "path": "Battery", "fmt": {"bix": 96, "len": 32, "max": 250199.883, "min": -250199.883, "div": 8583.07212, "sign": true, "unit": "kilowattHours" }, "name": "HV battery energy discharged"}
   ]},
 { "hdr": "7E5", "rax": "7ED", "din": "03", "dbg": true, "cmd": {"22": "1E33"}, "freq": 1,
@@ -6033,16 +5966,96 @@
     {"id": "AUDI_BMS_CELL_V_MIN_IDX",  "path": "Battery", "fmt": {"bix": 16, "len": 8,  "max": 255,                  "unit": "scalar" }, "name": "Cell voltage min, index"},
     {"id": "AUDI_HVBAT_CELL_V_MIN_NO", "path": "Battery", "fmt": {"bix": 24, "len": 8,  "max": 255,                  "unit": "scalar" }, "name": "HV battery lowest cell"}
   ]},
+{ "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "1E35"}, "freq": 5,
+  "signals": [
+    {"id": "AUDI_HVBAT_NEG_V_PRE", "path": "Battery", "fmt": { "len": 16, "max": 1023.968, "min": -1024, "div": 32, "sign": true, "unit": "volts" }, "name": "HV battery negative voltage before the contactors"}
+  ]},
+{ "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "1E36"}, "freq": 5,
+  "signals": [
+    {"id": "AUDI_HVBAT_POS_V_PRE", "path": "Battery", "fmt": { "len": 16, "max": 2047.968, "div": 32, "unit": "volts" }, "name": "HV battery positive voltage before the contactors"}
+  ]},
+{ "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "1E39"}, "freq": 5,
+  "signals": [
+    {"id": "AUDI_HVBAT_POS_V_POST", "path": "Battery", "fmt": { "len": 16, "max": 2047.937, "min": -2048, "div": 16, "sign": true, "unit": "volts" }, "name": "HV battery positive voltage after the charging contactors"}
+  ]},
 { "hdr": "7E5", "rax": "7ED", "din": "03", "dbg": true, "cmd": {"22": "1E3B"}, "freq": 1,
   "signals": [
     {"id": "AUDI_BMS_CELL_V_SUM", "path": "Battery", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "volts" }, "name": "Cell voltage sum"},
     {"id": "AUDI_HVBAT_VOLTS",    "path": "Battery", "fmt": { "len": 16, "max": 1000,   "div": 4,  "unit": "volts" }, "name": "HV battery voltage"},
     {"id": "AUDI_HVBAT_V",        "path": "Battery", "fmt": { "len": 16, "max": 1000,   "div": 4,  "unit": "volts" }, "name": "HV battery voltage", "suggestedMetric": "tractionBatteryVoltage"}
   ]},
-{ "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "1E3D"}, "freq": 1,
+{ "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "1E3C"}, "freq": 30,
+  "signals": [
+    {"id": "AUDI_HVBAT_CELL_SUM_V", "path": "Battery", "fmt": { "len": 24, "max": 4095.999, "div": 4096, "unit": "volts" }, "name": "HV battery cell voltage sum"}
+  ]},
+{ "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "1E3D"}, "freq": 5,
   "signals": [
     {"id": "AUDI_HVBAT_CURRENT", "path": "Battery", "fmt": { "len": 16, "max": 200, "min": -200, "div": 4, "add": -511, "unit": "amps" }, "name": "HV battery current"},
     {"id": "AUDI_HVBAT_I",       "path": "Battery", "fmt": { "len": 16, "max": 200, "min": -200, "div": 4, "add": -511, "unit": "amps" }, "name": "HV battery current", "suggestedMetric": "tractionBatteryCurrent"}
+  ]},
+{ "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "1EAE"}, "freq": 5,
+  "signals": [
+    {"id": "AUDI_HVBAT_T_1", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 1"}
+  ]},
+{ "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "1EAF"}, "freq": 5,
+  "signals": [
+    {"id": "AUDI_HVBAT_T_2", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 2"}
+  ]},
+{ "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "1EB0"}, "freq": 5,
+  "signals": [
+    {"id": "AUDI_HVBAT_T_3", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 3"}
+  ]},
+{ "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "1EB1"}, "freq": 5,
+  "signals": [
+    {"id": "AUDI_HVBAT_T_4", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 4"}
+  ]},
+{ "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "1EB2"}, "freq": 5,
+  "signals": [
+    {"id": "AUDI_HVBAT_T_5", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 5"}
+  ]},
+{ "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "1EB3"}, "freq": 5,
+  "signals": [
+    {"id": "AUDI_HVBAT_T_6", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 6"}
+  ]},
+{ "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "1EB4"}, "freq": 5,
+  "signals": [
+    {"id": "AUDI_HVBAT_T_7", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 7"}
+  ]},
+{ "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "1EB5"}, "freq": 5,
+  "signals": [
+    {"id": "AUDI_HVBAT_T_8", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 8"}
+  ]},
+{ "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "1EB6"}, "freq": 5,
+  "signals": [
+    {"id": "AUDI_HVBAT_T_9", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 9"}
+  ]},
+{ "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "1EB7"}, "freq": 5,
+  "signals": [
+    {"id": "AUDI_HVBAT_T_10", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 10"}
+  ]},
+{ "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "1EB8"}, "freq": 5,
+  "signals": [
+    {"id": "AUDI_HVBAT_T_11", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 11"}
+  ]},
+{ "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "1EB9"}, "freq": 5,
+  "signals": [
+    {"id": "AUDI_HVBAT_T_12", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 12"}
+  ]},
+{ "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "1EBA"}, "freq": 5,
+  "signals": [
+    {"id": "AUDI_HVBAT_T_13", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 13"}
+  ]},
+{ "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "1EBC"}, "freq": 5,
+  "signals": [
+    {"id": "AUDI_HVBAT_T_15", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 15"}
+  ]},
+{ "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "1EBD"}, "freq": 5,
+  "signals": [
+    {"id": "AUDI_HVBAT_T_16", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 16"}
+  ]},
+{ "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "2A0B"}, "freq": 5,
+  "signals": [
+    {"id": "AUDI_HVBAT_T", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature"}
   ]},
 { "hdr": "7E5", "rax": "7ED", "din": "03", "dbg": true, "cmd": {"22": "5170"}, "freq": 1,
   "signals": [
@@ -6071,6 +6084,22 @@
 { "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "51E0"}, "freq": 30,
   "signals": [
     {"id": "AUDI_HVBAT_SOH", "path": "Battery", "fmt": { "len": 16, "max": 6524, "min": -1798.574, "mul": 0.127, "add": -1798.574, "unit": "percent" }, "name": "HV battery health", "suggestedMetric": "stateOfHealth"}
+  ]},
+{ "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "7425"}, "freq": 5,
+  "signals": [
+    {"id": "AUDI_HVBAT_T_17", "path": "Battery", "fmt": { "len": 16, "max": 1023.984, "div": 64, "unit": "celsius" }, "name": "HV battery temperature sensor 17"}
+  ]},
+{ "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "74B9"}, "freq": 5,
+  "signals": [
+    {"id": "AUDI_HV_INTERLOCK_DET_V", "path": "Battery", "fmt": { "len": 16, "max": 20.004, "div": 3276, "unit": "volts" }, "name": "HV interlock detector voltage"}
+  ]},
+{ "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "74BA"}, "freq": 5,
+  "signals": [
+    {"id": "AUDI_HV_INTERLOCK_SRC_V", "path": "Battery", "fmt": { "len": 16, "max": 20.004, "div": 3276, "unit": "volts" }, "name": "HV interlock source voltage"}
+  ]},
+{ "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "74BC"}, "freq": 5,
+  "signals": [
+    {"id": "AUDI_HV_INTERLOCK_SRC_I", "path": "Battery", "fmt": { "len": 16, "max": 63.999, "div": 1024, "unit": "milliamps" }, "name": "HV interlock source current"}
   ]},
 { "hdr": "7E5", "rax": "7ED", "din": "03", "dbg": true, "cmd": {"22": "80EC"}, "freq": 1,
   "signals": [
