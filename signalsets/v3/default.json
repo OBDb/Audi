@@ -325,7 +325,7 @@
 { "hdr": "710", "rax": "77A", "dbg": true, "cmd": {"22": "2A10"}, "freq": 5,
   "signals": [
     {"id": "AUDI_BAT_V_AT_REST", "path": "Battery", "fmt": { "len": 8, "max": 34.5, "min": 9,            "div": 10,  "add": 9, "unit": "volts" }, "name": "Battery voltage at rest"},
-    {"id": "AUDI_SSB_V_REST",    "path": "Battery", "fmt": { "len": 8, "max": 63,   "min": 9, "mul": 54, "div": 255, "add": 9, "unit": "volts" }, "name": "Start/stop battery voltage (at rest)"}
+    {"id": "AUDI_SSB_V_REST",    "path": "Battery", "fmt": { "len": 8, "max": 63,   "min": 9, "mul": 54, "div": 255, "add": 9, "unit": "volts" }, "name": "Start/stop battery voltage, at rest"}
   ]},
 { "hdr": "710", "rax": "77A", "fcm1": true, "dbg": true, "cmd": {"22": "2A15"}, "freq": 1,
   "signals": [
@@ -2037,8 +2037,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "tmo": "96", "dbg": true, "cmd": {"22": "11BA"}, "freq": 30,
   "signals": [
-    {"id": "AUDI_OIL_LEVEL", "path": "Engine", "fmt": { "len": 16, "max": 26.2, "div": 2500, "unit": "centimeters" }, "name": "Oil level"},
-    {"id": "AUDI_OIL_LVL",   "path": "Engine", "fmt": { "len": 16, "max": 262,  "div": 250,  "unit": "unknown"     }, "name": "Oil level"}
+    {"id": "AUDI_OIL_LEVEL", "path": "Engine", "fmt": { "len": 16, "max": 26.2, "div": 2500, "unit": "centimeters" }, "name": "Oil level"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "11BB"}, "freq": 1,
   "signals": [
