@@ -570,6 +570,10 @@
   "signals": [
     {"id": "AUDI_STEER_ANGLE", "path": "Control", "fmt": { "len": 16, "max": 32.767, "min": -32.768, "div": 1000, "sign": true, "unit": "radians" }, "name": "Steering wheel angle", "description": "Positive is rotated to the left, negative is rotated to the right."}
   ]},
+{ "hdr": "714", "fcm1": true, "dbg": true, "cmd": {"22": "0530"}, "freq": 0.5,
+  "signals": [
+    {"id": "AUDI_TRIP_USE_SHORT", "path": "Trips", "fmt": {"bix": 238, "len": 18, "max": 131, "min": -131, "div": 1000, "sign": true, "unit": "kilowattHoursPer100Miles" }, "name": "Trip consumption, short"}
+  ]},
 { "hdr": "714", "dbg": true, "cmd": {"22": "202F"}, "freq": 30,
   "signals": [
     {"id": "AUDI_EOT_V2",     "path": "Engine", "fmt": { "len": 8, "max": 255,             "add": -58, "unit": "scalar"  }, "name": "Engine oil temperature"},
@@ -596,13 +600,13 @@
   "signals": [
     {"id": "AUDI_FLI_VOL", "path": "Fuel", "fmt": {"bix": 336, "len": 16, "max": 6553.5, "div": 10, "unit": "liters" }, "name": "Fuel level (volume)"}
   ]},
+{ "hdr": "714", "dbg": true, "cmd": {"22": "22E0"}, "freq": 1,
+  "signals": [
+    {"id": "AUDI_RANGE_DSP", "path": "Trips", "fmt": { "len": 16, "max": 65535, "unit": "kilometers" }, "name": "Range remaining, displayed", "suggestedMetric": "electricRange"}
+  ]},
 { "hdr": "714", "dbg": true, "cmd": {"22": "2613"}, "freq": 30,
   "signals": [
     {"id": "AUDI_IAT", "path": "Climate", "fmt": { "len": 16, "max": 255, "div": 10, "unit": "celsius" }, "name": "Interior air temperature"}
-  ]},
-{ "hdr": "714", "rax": "77E", "fcm1": true, "dbg": true, "cmd": {"22": "0530"}, "freq": 0.5,
-  "signals": [
-    {"id": "AUDI_TRIP_USE_SHORT", "path": "Trips", "fmt": {"bix": 238, "len": 18, "max": 131, "min": -131, "div": 1000, "sign": true, "unit": "kilowattHoursPer100Miles" }, "name": "Trip consumption, short"}
   ]},
 { "hdr": "714", "rax": "77E", "din": "03", "dbg": true, "cmd": {"22": "1014"}, "freq": 5,
   "signals": [
@@ -632,10 +636,6 @@
 { "hdr": "714", "rax": "77E", "fcm1": true, "dbg": true, "cmd": {"22": "22B8"}, "freq": 30,
   "signals": [
     {"id": "AUDI_ODO_MILEAGE_HR", "path": "Trips", "fmt": { "len": 32, "max": 4294967, "div": 1000, "unit": "kilometers" }, "name": "Odometer, mileage, HR", "suggestedMetric": "odometer"}
-  ]},
-{ "hdr": "714", "rax": "77E", "dbg": true, "cmd": {"22": "22E0"}, "freq": 1,
-  "signals": [
-    {"id": "AUDI_RANGE_DSP", "path": "Trips", "fmt": { "len": 16, "max": 65535, "unit": "kilometers" }, "name": "Range remaining, displayed"}
   ]},
 { "hdr": "715", "dbg": true, "cmd": {"22": "2353"}, "freq": 3600,
   "signals": [
@@ -1206,7 +1206,8 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "pri": "17", "fcm1": true, "dbg": true, "cmd": {"22": "101A"}, "freq": 0.25,
   "signals": [
-    {"id": "AUDI_A_C_COMPRESSOR_TORQUE", "path": "Engine", "fmt": { "len": 16, "max": 3276.7, "min": -3276.8, "div": 10, "sign": true, "unit": "newtonMeters" }, "name": "A/C compressor torque"}
+    {"id": "AUDI_A_C_COMPRESSOR_TORQUE", "path": "Engine", "fmt": { "len": 16, "max": 3276.7, "min": -3276.8, "div": 10, "sign": true, "unit": "newtonMeters" }, "name": "A/C compressor torque"},
+    {"id": "AUDI_AC_COMP_TQ_V2",         "path": "Engine", "fmt": { "len": 16, "max": 3276,   "min": -3276,   "div": 10, "sign": true, "unit": "newtonMeters" }, "name": "Air conditioning compressor torque"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "101B"}, "freq": 0.25,
   "signals": [
@@ -1219,7 +1220,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1023"}, "freq": 0.25,
   "signals": [
-    {"id": "AUDI_AC_COMP_TQ_V2", "path": "Engine", "fmt": { "len": 16, "max": 3276, "min": -3276, "div": 10, "sign": true, "unit": "newtonMeters" }, "name": "Air conditioning compressor torque"}
+    {"id": "AUDI_AC_COMP_TQ_V3", "path": "Engine", "fmt": { "len": 16, "max": 3276, "min": -3276, "div": 10, "sign": true, "unit": "newtonMeters" }, "name": "Air conditioning compressor torque"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1024"}, "freq": 1,
   "signals": [
@@ -1305,7 +1306,9 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "pri": "17", "fcm1": true, "dbg": true, "cmd": {"22": "105A"}, "freq": 5,
   "signals": [
-    {"id": "AUDI_BATTERY_V", "path": "Battery", "fmt": { "len": 16, "max": 65535, "unit": "scalar" }, "name": "Battery voltage, raw count"}
+    {"id": "AUDI_BATTERY_V",   "path": "Battery", "fmt": { "len": 16, "max": 65535,            "unit": "scalar" }, "name": "Battery voltage, raw count"},
+    {"id": "AUDI_BAT_V_PRE19", "path": "Battery", "fmt": { "len": 16, "max": 1310,  "div": 50, "unit": "volts"  }, "name": "Battery voltage"},
+    {"id": "AUDI_BAT_V",       "path": "Battery", "fmt": { "len": 16, "max": 1310,  "div": 50, "unit": "volts"  }, "name": "Battery voltage",            "suggestedMetric": "starterBatteryVoltage"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "din": "03", "dbg": true, "cmd": {"22": "105C"}, "freq": 1,
   "signals": [
@@ -2861,7 +2864,8 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "pri": "17", "fcm1": true, "dbg": true, "cmd": {"22": "14F9"}, "freq": 3600,
   "signals": [
-    {"id": "AUDI_MAIN_CAT_OSC_AGE_CORRECTION_FACTOR", "path": "Engine", "fmt": { "len": 16, "max": 2, "mul": 2, "div": 65535, "unit": "scalar" }, "name": "Main cat oxygen storage capacity age correction factor"}
+    {"id": "AUDI_MAIN_CAT_OSC_AGE_CORRECTION_FACTOR", "path": "Engine", "fmt": { "len": 16, "max": 2,     "mul": 2,     "div": 65535,      "unit": "scalar" }, "name": "Main cat oxygen storage capacity age correction factor"},
+    {"id": "AUDI_MAIN_CAT_AGING",                     "path": "Engine", "fmt": { "len": 16, "max": 0.199, "mul": 24581, "div": 8054700000, "unit": "scalar" }, "name": "Main catalyst aging factor"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1502"}, "freq": 0.25,
   "signals": [
@@ -3505,7 +3509,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "2017"}, "freq": 0.25,
   "signals": [
-    {"id": "AUDI_AC_COMP_TQ_V4", "path": "Engine", "fmt": { "len": 16, "max": 327.67, "min": -327.68, "div": 100, "sign": true, "unit": "newtonMeters" }, "name": "Air conditioning compressor torque"}
+    {"id": "AUDI_AC_COMP_TQ_V5", "path": "Engine", "fmt": { "len": 16, "max": 327.67, "min": -327.68, "div": 100, "sign": true, "unit": "newtonMeters" }, "name": "Air conditioning compressor torque"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "2019"}, "freq": 1,
   "signals": [
@@ -6193,6 +6197,10 @@
   "signals": [
     {"id": "AUDI_ACCEL_PEDAL_POS_7E1", "path": "Movement", "fmt": { "len": 8, "max": 100, "mul": 20, "div": 51, "unit": "percent" }, "name": "Accelerator pedal position"}
   ]},
+{ "hdr": "7E5", "dbg": true, "cmd": {"22": "5200"}, "freq": 3600,
+  "signals": [
+    {"id": "AUDI_LAUNCH", "path": "Stats", "fmt": { "len": 32, "max": 1000000, "unit": "scalar" }, "name": "Launch control count", "description": "How many times you've initiated launch control on the car."}
+  ]},
 { "hdr": "7E5", "rax": "7ED", "din": "03", "dbg": true, "cmd": {"22": "028C"}, "freq": 1,
   "signals": [
     {"id": "AUDI_HVBAT_SOC_V2", "path": "Battery", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "HV battery charge",          "suggestedMetric": "stateOfCharge"},
@@ -7608,10 +7616,6 @@
 { "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "51E0"}, "freq": 30,
   "signals": [
     {"id": "AUDI_HVBAT_SOH", "path": "Battery", "fmt": { "len": 16, "max": 6524, "min": -1798.574, "mul": 0.127, "add": -1798.574, "unit": "percent" }, "name": "HV battery health", "suggestedMetric": "stateOfHealth"}
-  ]},
-{ "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "5200"}, "freq": 3600,
-  "signals": [
-    {"id": "AUDI_LAUNCH", "path": "Stats", "fmt": { "len": 32, "max": 1000000, "unit": "scalar" }, "name": "Launch control count", "description": "How many times you've initiated launch control on the car."}
   ]},
 { "hdr": "7E5", "rax": "7ED", "dbg": true, "cmd": {"22": "7425"}, "freq": 5,
   "signals": [
