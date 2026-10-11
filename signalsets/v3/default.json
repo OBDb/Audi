@@ -315,8 +315,8 @@
   "signals": [
     {"id": "AUDI_BAT_INT_R",       "path": "Battery", "fmt": { "len": 8, "max": 51,                 "mul": 20, "div": 100,               "unit": "unknown"   }, "name": "Battery internal resistance"},
     {"id": "AUDI_SSB_R",           "path": "Battery", "fmt": { "len": 8, "max": 51,                 "mul": 2,  "div": 10,                "unit": "milliohms" }, "name": "Start/stop battery resistance"},
-    {"id": "AUDI_MQB_BAT_INT_RES", "path": "Battery", "fmt": { "len": 8, "max": 25.4, "min": -25.6,            "div": 5,   "sign": true, "unit": "unknown"   }, "name": "Battery internal resistance"},
-    {"id": "AUDI_SSB_RES_INT",     "path": "Battery", "fmt": { "len": 8, "max": 25.4, "min": -25.6,            "div": 5,   "sign": true, "unit": "scalar"    }, "name": "Battery internal resistance"}
+    {"id": "AUDI_SSB_RES_INT",     "path": "Battery", "fmt": { "len": 8, "max": 25.4, "min": -25.6,            "div": 5,   "sign": true, "unit": "scalar"    }, "name": "Battery internal resistance"},
+    {"id": "AUDI_MQB_BAT_INT_RES", "path": "Battery", "fmt": { "len": 8, "max": 25.4, "min": -25.6,            "div": 5,   "sign": true, "unit": "unknown"   }, "name": "Battery internal resistance"}
   ]},
 { "hdr": "710", "rax": "77A", "dbg": true, "cmd": {"22": "2A0F"}, "freq": 5,
   "signals": [
@@ -442,20 +442,24 @@
   ]},
 { "hdr": "713", "dbg": true, "cmd": {"22": "2B1B"}, "freq": 30,
   "signals": [
-    {"id": "AUDI_TIRE_FL_SPD_V2", "path": "Movement", "fmt": { "len": 16, "max": 1000, "div": 10, "unit": "kilometersPerHour" }, "name": "Front left wheel speed"}
+    {"id": "AUDI_TIRE_FL_SPD_V2", "path": "Movement", "fmt": { "len": 16, "max": 1000,           "div": 10,  "unit": "kilometersPerHour" }, "name": "Front left wheel speed"},
+    {"id": "AUDI_TIRE_FL_SPD_V3", "path": "Movement", "fmt": { "len": 16, "max": 1000, "mul": 9, "div": 160, "unit": "kilometersPerHour" }, "name": "Front left wheel speed"}
   ]},
 { "hdr": "713", "dbg": true, "cmd": {"22": "2B1C"}, "freq": 30,
   "signals": [
-    {"id": "AUDI_TIRE_FR_SPD_V3", "path": "Movement", "fmt": { "len": 16, "max": 1000, "div": 10, "unit": "kilometersPerHour" }, "name": "Front right wheel speed"}
+    {"id": "AUDI_TIRE_FR_SPD_V3",    "path": "Movement", "fmt": { "len": 16, "max": 1000,           "div": 10,  "unit": "kilometersPerHour" }, "name": "Front right wheel speed"},
+    {"id": "AUDI_TIRE_FR_SPD_V3_V2", "path": "Movement", "fmt": { "len": 16, "max": 1000, "mul": 9, "div": 160, "unit": "kilometersPerHour" }, "name": "Front right wheel speed"}
   ]},
 { "hdr": "713", "dbg": true, "cmd": {"22": "2B1D"}, "freq": 30,
   "signals": [
-    {"id": "AUDI_TIRE_RL_SPD_V3", "path": "Movement", "fmt": { "len": 16, "max": 1000, "div": 10, "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"}
+    {"id": "AUDI_TIRE_RL_SPD_V3",    "path": "Movement", "fmt": { "len": 16, "max": 1000,           "div": 10,  "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"},
+    {"id": "AUDI_TIRE_RL_SPD_V3_V2", "path": "Movement", "fmt": { "len": 16, "max": 1000, "mul": 9, "div": 160, "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"}
   ]},
 { "hdr": "713", "dbg": true, "cmd": {"22": "2B1E"}, "freq": 30,
   "signals": [
-    {"id": "AUDI_TIRE_RR_SPD_V2",  "path": "Movement", "fmt": { "len": 16, "max": 1000, "div": 10,                  "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"},
-    {"id": "AUDI_TIRE_RR_SPD_713", "path": "Movement", "fmt": { "len": 16, "max": 1000, "div": 10, "nullmax": 1000, "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"}
+    {"id": "AUDI_TIRE_RR_SPD_V2",  "path": "Movement", "fmt": { "len": 16, "max": 1000,           "div": 10,                   "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"},
+    {"id": "AUDI_TIRE_RR_SPD_713", "path": "Movement", "fmt": { "len": 16, "max": 1000,           "div": 10,  "nullmax": 1000, "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"},
+    {"id": "AUDI_TIRE_RR_SPD_V3",  "path": "Movement", "fmt": { "len": 16, "max": 1000, "mul": 9, "div": 160,                  "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"}
   ]},
 { "hdr": "713", "rax": "77D", "fcm1": true, "dbg": true, "cmd": {"22": "03E8"}, "freq": 0.25,
   "signals": [
@@ -527,26 +531,26 @@
   ]},
 { "hdr": "713", "rax": "77D", "fcm1": true, "dbg": true, "cmd": {"22": "1821"}, "freq": 5,
   "signals": [
-    {"id": "AUDI_MQB_TPMS_AVAIL",                      "path": "Tires", "fmt": {"bix": 7,   "len": 1,  "max": 1,                                 "unit": "offon"      }, "name": "Tire pressure monitoring available"},
     {"id": "AUDI_TPMS",                                "path": "Tires", "fmt": {"bix": 7,   "len": 1,  "max": 1,                                 "unit": "noyes"      }, "name": "Tire pressure monitoring system available"},
-    {"id": "AUDI_MQB_TPMS_ODO_ADAPT_1",                "path": "Tires", "fmt": {"bix": 8,   "len": 32, "max": 200000,                            "unit": "kilometers" }, "name": "Tire pressure monitoring odometer reading at last adaptation"},
+    {"id": "AUDI_MQB_TPMS_AVAIL",                      "path": "Tires", "fmt": {"bix": 7,   "len": 1,  "max": 1,                                 "unit": "offon"      }, "name": "Tire pressure monitoring available"},
+    {"id": "AUDI_TPMS_ODO_LAST_ADAPTATION",            "path": "Tires", "fmt": {"bix": 8,   "len": 32, "max": 200000,                            "unit": "kilometers" }, "name": "Odometer, last adaptation"},
     {"id": "AUDI_TPMS_AVAIL",                          "path": "Tires", "fmt": {"bix": 15,  "len": 1,  "max": 1,                                 "unit": "noyes"      }, "name": "Tire pressure monitoring available?"},
     {"id": "AUDI_TPMS_ODO_RDG_AT_LAST_ADAPT",          "path": "Trips", "fmt": {"bix": 16,  "len": 32, "max": 4294967295, "nullmax": 4294967295, "unit": "kilometers" }, "name": "Odometer reading at last adaptation"},
-    {"id": "AUDI_MQB_TPMS_ODO_ADAPT_2",                "path": "Tires", "fmt": {"bix": 40,  "len": 32, "max": 200000,                            "unit": "kilometers" }, "name": "Tire pressure monitoring odometer reading two adaptations ago"},
+    {"id": "AUDI_TPMS_ODO_TWO_ADAPTATIONS_AGO",        "path": "Tires", "fmt": {"bix": 40,  "len": 32, "max": 200000,                            "unit": "kilometers" }, "name": "Odometer, two adaptations ago"},
     {"id": "AUDI_TPMS_ODO_RDG_TWO_ADAPTATIONS_AGO",    "path": "Trips", "fmt": {"bix": 48,  "len": 32, "max": 4294967295, "nullmax": 4294967295, "unit": "kilometers" }, "name": "Odometer reading two adaptations ago"},
-    {"id": "AUDI_MQB_TPMS_ODO_ADAPT_3",                "path": "Tires", "fmt": {"bix": 72,  "len": 32, "max": 200000,                            "unit": "kilometers" }, "name": "Tire pressure monitoring odometer reading three adaptations ago"},
+    {"id": "AUDI_TPMS_ODO_THREE_ADAPTATIONS_AGO",      "path": "Tires", "fmt": {"bix": 72,  "len": 32, "max": 200000,                            "unit": "kilometers" }, "name": "Odometer, three adaptations ago"},
     {"id": "AUDI_TPMS_ODO_RDG_THREE_ADAPTATIONS_AGO",  "path": "Trips", "fmt": {"bix": 80,  "len": 32, "max": 4294967295, "nullmax": 4294967295, "unit": "kilometers" }, "name": "Odometer reading three adaptations ago"},
-    {"id": "AUDI_MQB_TPMS_ODO_ADAPT_4",                "path": "Tires", "fmt": {"bix": 104, "len": 32, "max": 200000,                            "unit": "kilometers" }, "name": "Tire pressure monitoring odometer reading four adaptations ago"},
+    {"id": "AUDI_TPMS_ODO_FOUR_ADAPTATIONS_AGO",       "path": "Tires", "fmt": {"bix": 104, "len": 32, "max": 200000,                            "unit": "kilometers" }, "name": "Odometer, four adaptations ago"},
     {"id": "AUDI_TPMS_ODO_RDG_FOUR_ADAPTATIONS_AGO",   "path": "Trips", "fmt": {"bix": 112, "len": 32, "max": 4294967295, "nullmax": 4294967295, "unit": "kilometers" }, "name": "Odometer reading four adaptations ago"},
-    {"id": "AUDI_MQB_TPMS_ODO_WARN_1",                 "path": "Tires", "fmt": {"bix": 136, "len": 32, "max": 200000,                            "unit": "kilometers" }, "name": "Tire pressure monitoring odometer reading at last warning"},
+    {"id": "AUDI_TPMS_ODO_LAST_WARN",                  "path": "Tires", "fmt": {"bix": 136, "len": 32, "max": 200000,                            "unit": "kilometers" }, "name": "Odometer, last warning"},
     {"id": "AUDI_TPMS_ODO_RDG_AT_LAST_WARN",           "path": "Trips", "fmt": {"bix": 144, "len": 32, "max": 4294967295, "nullmax": 4294967295, "unit": "kilometers" }, "name": "Odometer reading at last warning"},
-    {"id": "AUDI_MQB_TPMS_ODO_WARN_2",                 "path": "Tires", "fmt": {"bix": 168, "len": 32, "max": 200000,                            "unit": "kilometers" }, "name": "Tire pressure monitoring odometer reading at second to last warning"},
+    {"id": "AUDI_TPMS_ODO_NEXT_TO_LAST_WARN",          "path": "Tires", "fmt": {"bix": 168, "len": 32, "max": 200000,                            "unit": "kilometers" }, "name": "Odometer, next-to-last warning"},
     {"id": "AUDI_TPMS_ODO_RDG_AT_NEXT_TO_LAST_WARN",   "path": "Trips", "fmt": {"bix": 176, "len": 32, "max": 4294967295, "nullmax": 4294967295, "unit": "kilometers" }, "name": "Odometer reading at next-to-last warning"},
-    {"id": "AUDI_MQB_TPMS_ODO_WARN_3",                 "path": "Tires", "fmt": {"bix": 200, "len": 32, "max": 200000,                            "unit": "kilometers" }, "name": "Tire pressure monitoring odometer reading at third to last warning"},
+    {"id": "AUDI_TPMS_ODO_THIRD_TO_LAST_WARN",         "path": "Tires", "fmt": {"bix": 200, "len": 32, "max": 200000,                            "unit": "kilometers" }, "name": "Odometer, third-to-last warning"},
     {"id": "AUDI_TPMS_ODO_RDG_AT_THIRD_TO_LAST_WARN",  "path": "Trips", "fmt": {"bix": 208, "len": 32, "max": 4294967295, "nullmax": 4294967295, "unit": "kilometers" }, "name": "Odometer reading at third-to-last warning"},
-    {"id": "AUDI_MQB_TPMS_ODO_WARN_4",                 "path": "Tires", "fmt": {"bix": 232, "len": 32, "max": 200000,                            "unit": "kilometers" }, "name": "Tire pressure monitoring odometer reading at fourth to last warning"},
+    {"id": "AUDI_TPMS_ODO_FOURTH_TO_LAST_WARN",        "path": "Tires", "fmt": {"bix": 232, "len": 32, "max": 200000,                            "unit": "kilometers" }, "name": "Odometer, fourth-to-last warning"},
     {"id": "AUDI_TPMS_ODO_RDG_AT_FOURTH_TO_LAST_WARN", "path": "Trips", "fmt": {"bix": 240, "len": 32, "max": 4294967295, "nullmax": 4294967295, "unit": "kilometers" }, "name": "Odometer reading at fourth-to-last warning"},
-    {"id": "AUDI_MQB_TPMS_FL_TIRE_LEAK",               "path": "Tires", "fmt": {"bix": 264, "len": 8,  "max": 255,                               "unit": "scalar"     }, "name": "Tire pressure monitoring front left tire leakage rate"},
+    {"id": "AUDI_TPMS_FL_TP_DIFFUSION",                "path": "Tires", "fmt": {"bix": 264, "len": 8,  "max": 255,                               "unit": "scalar"     }, "name": "Front left tire pressure diffusion"},
     {"id": "AUDI_TPMS_FR_L_TIRE_P_DIFF_IND",           "path": "Tires", "fmt": {"bix": 272, "len": 8,  "max": 255,                               "unit": "scalar"     }, "name": "Front left tire pressure diffusion indicator"},
     {"id": "AUDI_TPMS_FR_R_TIRE_P_DIFF_IND",           "path": "Tires", "fmt": {"bix": 280, "len": 8,  "max": 255,                               "unit": "scalar"     }, "name": "Front right tire pressure diffusion indicator"},
     {"id": "AUDI_TPMS_RR_L_TIRE_P_DIFF_IND",           "path": "Tires", "fmt": {"bix": 288, "len": 8,  "max": 255,                               "unit": "scalar"     }, "name": "Rear left tire pressure diffusion indicator"},
@@ -587,10 +591,9 @@
   ]},
 { "hdr": "714", "dbg": true, "cmd": {"22": "2203"}, "freq": 30,
   "signals": [
-    {"id": "AUDI_ODO_DASH", "path": "Trips", "fmt": { "len": 24, "max": 255,                  "unit": "kilometers" }, "name": "Odometer (dash)", "suggestedMetric": "odometer"},
-    {"id": "AUDI_PQ35_ODO", "path": "Trips", "fmt": { "len": 16, "max": 655350,    "mul": 10, "unit": "kilometers" }, "name": "Odometer",        "suggestedMetric": "odometer"},
-    {"id": "AUDI_ODO_714",  "path": "Trips", "fmt": { "len": 24, "max": 16777215,             "unit": "kilometers" }, "name": "Odometer",        "suggestedMetric": "odometer"},
-    {"id": "AUDI_ODO_V2",   "path": "Trips", "fmt": { "len": 24, "max": 167772150, "mul": 10, "unit": "kilometers" }, "name": "Odometer (dash)", "suggestedMetric": "odometer"}
+    {"id": "AUDI_ODO_DASH", "path": "Trips", "fmt": { "len": 24, "max": 255,                 "unit": "kilometers" }, "name": "Odometer (dash)", "suggestedMetric": "odometer"},
+    {"id": "AUDI_PQ35_ODO", "path": "Trips", "fmt": { "len": 16, "max": 655350,   "mul": 10, "unit": "kilometers" }, "name": "Odometer",        "suggestedMetric": "odometer"},
+    {"id": "AUDI_ODO_714",  "path": "Trips", "fmt": { "len": 24, "max": 16777215,            "unit": "kilometers" }, "name": "Odometer",        "suggestedMetric": "odometer"}
   ]},
 { "hdr": "714", "dbg": true, "cmd": {"22": "2294"}, "freq": 30,
   "signals": [
@@ -925,7 +928,7 @@
 { "hdr": "746", "rax": "7B0", "fcm1": true, "din": "03", "dbg": true, "cmd": {"22": "2606"}, "freq": 2,
   "signals": [
     {"id": "AUDI_CLIMATE_RAD_FAN_ACT_DUTY", "path": "Engine",  "fmt": {           "len": 8,  "max": 100,                "div": 2.5, "unit": "percent" }, "name": "Radiator fan actual duty"},
-    {"id": "AUDI_PQ35_RAD_FAN_DUTY",        "path": "Climate", "fmt": {           "len": 8,  "max": 100,    "mul": 0.4,             "unit": "percent" }, "name": "Radiator fan duty"},
+    {"id": "AUDI_RADIATOR_FAN_ACTUAL_DUTY", "path": "Climate", "fmt": {           "len": 8,  "max": 100,    "mul": 0.4,             "unit": "percent" }, "name": "Radiator fan actual duty"},
     {"id": "AUDI_HVAC_FAN1_ACT",            "path": "Climate", "fmt": {           "len": 16, "max": 6553.5,             "div": 10,  "unit": "percent" }, "name": "Radiator fan actual #1"},
     {"id": "AUDI_RAD_FAN_ACT_DUTY",         "path": "Climate", "fmt": {           "len": 8,  "max": 100,    "mul": 2,   "div": 5,   "unit": "percent" }, "name": "Radiator fan actual duty"},
     {"id": "AUDI_HVAC_FAN2_ACT",            "path": "Climate", "fmt": {"bix": 16, "len": 16, "max": 6553.5,             "div": 10,  "unit": "percent" }, "name": "Radiator fan actual #2"}
@@ -967,8 +970,8 @@
 { "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "2612"}, "freq": 5,
   "signals": [
     {"id": "AUDI_CLIMATE_T_AFTER_EVAP", "path": "Engine",  "fmt": { "len": 8,  "max": 42.291, "min": -42.624, "mul": 0.333,            "sign": true, "unit": "celsius" }, "name": "Temperature after evaporator"},
-    {"id": "AUDI_HVAC_EVAP_T",          "path": "Engine",  "fmt": { "len": 16, "max": 3276.7, "min": -3276.8,               "div": 10, "sign": true, "unit": "celsius" }, "name": "Temperature, evaporator output"},
-    {"id": "AUDI_T_AFTER_EVAPORATOR",   "path": "Climate", "fmt": { "len": 8,  "max": 42.291, "min": -42.624,               "div": 3,  "sign": true, "unit": "celsius" }, "name": "Temperature after evaporator"}
+    {"id": "AUDI_T_AFTER_EVAPORATOR",   "path": "Climate", "fmt": { "len": 8,  "max": 42.291, "min": -42.624,               "div": 3,  "sign": true, "unit": "celsius" }, "name": "Temperature after evaporator"},
+    {"id": "AUDI_HVAC_EVAP_T",          "path": "Engine",  "fmt": { "len": 16, "max": 3276.7, "min": -3276.8,               "div": 10, "sign": true, "unit": "celsius" }, "name": "Temperature, evaporator output"}
   ]},
 { "hdr": "746", "rax": "7B0", "fcm1": true, "dbg": true, "cmd": {"22": "2613"}, "freq": 5,
   "signals": [
@@ -1077,8 +1080,9 @@
   ]},
 { "hdr": "7E0", "din": "03", "dbg": true, "cmd": {"22": "10F3"}, "freq": 1,
   "signals": [
-    {"id": "AUDI_PQ35_DPF_DIFF_P_2",    "path": "Engine", "fmt": { "len": 16, "max": 32767, "min": -32768,                         "sign": true, "unit": "unknown"     }, "name": "Diesel particulate filter differential pressure variant 2"},
-    {"id": "AUDI_OIL_LEVEL_LAST_VALID", "path": "Engine", "fmt": { "len": 16, "max": 3968,  "min": -127,   "div": 16, "add": -127,               "unit": "millimeters" }, "name": "Oil level, last valid dynamic value"}
+    {"id": "AUDI_PQ35_DPF_DIFF_P_2",    "path": "Engine",    "fmt": { "len": 16, "max": 32767, "min": -32768,                         "sign": true, "unit": "unknown"     }, "name": "Diesel particulate filter differential pressure variant 2"},
+    {"id": "AUDI_OIL_LEVEL_LAST_VALID", "path": "Engine",    "fmt": { "len": 16, "max": 3968,  "min": -127,   "div": 16, "add": -127,               "unit": "millimeters" }, "name": "Oil level, last valid dynamic value"},
+    {"id": "AUDI_DPF_DIFF_P_RAW",       "path": "Emissions", "fmt": { "len": 16, "max": 32767, "min": -32768,                         "sign": true, "unit": "scalar"      }, "name": "Particulate filter differential pressure, raw count"}
   ]},
 { "hdr": "7E0", "din": "03", "dbg": true, "cmd": {"22": "114E"}, "freq": 1,
   "signals": [
@@ -1087,7 +1091,8 @@
 { "hdr": "7E0", "dbg": true, "cmd": {"22": "1153"}, "freq": 1,
   "signals": [
     {"id": "AUDI_PQ35_DPF_OIL_ASH_VOL", "path": "Engine.DPF", "fmt": { "len": 16, "max": 327.67, "min": -327.68, "div": 100, "sign": true, "unit": "liters"       }, "name": "Diesel particulate filter oil ash volume"},
-    {"id": "AUDI_EM_TORQ_1",            "path": "Engine",     "fmt": { "len": 16, "max": 1000,   "min": -1000,   "div": 32,  "sign": true, "unit": "newtonMeters" }, "name": "Elector motor 1 torque"}
+    {"id": "AUDI_EM_TORQ_1",            "path": "Engine",     "fmt": { "len": 16, "max": 1000,   "min": -1000,   "div": 32,  "sign": true, "unit": "newtonMeters" }, "name": "Elector motor 1 torque"},
+    {"id": "AUDI_1153_RAW",             "path": "Engine",     "fmt": { "len": 8,  "max": 255,                                              "unit": "scalar"       }, "name": "Engine read 1153, raw count"}
   ]},
 { "hdr": "7E0", "din": "03", "dbg": true, "cmd": {"22": "162F"}, "freq": 1,
   "signals": [
@@ -1329,7 +1334,9 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "din": "03", "dbg": true, "cmd": {"22": "105E"}, "freq": 5,
   "signals": [
-    {"id": "AUDI_PQ35_BAT_V_2", "path": "Battery", "fmt": { "len": 16, "max": 1310.7, "div": 50, "unit": "volts" }, "name": "Battery voltage variant"}
+    {"id": "AUDI_PQ35_BAT_V_2",   "path": "Battery", "fmt": { "len": 16, "max": 1310.7,                         "div": 50,                             "unit": "volts"  }, "name": "Battery voltage variant"},
+    {"id": "AUDI_PQ35_BAT_V_2_2", "path": "Battery", "fmt": { "len": 16, "max": 1310.7,                         "div": 50,               "nullmin": 0, "unit": "volts"  }, "name": "Battery voltage variant"},
+    {"id": "AUDI_105E_RAW",       "path": "Battery", "fmt": { "len": 32, "max": 2147483647, "min": -2147483648,            "sign": true,               "unit": "scalar" }, "name": "Engine read 105E, signed raw count"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1063"}, "freq": 5,
   "signals": [
@@ -1500,8 +1507,10 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "10E0"}, "freq": 30,
   "signals": [
-    {"id": "AUDI_ODO_7E0", "path": "Trips", "fmt": { "len": 32, "max": 4000000000, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"},
-    {"id": "AUDI_ODO",     "path": "Trips", "fmt": { "len": 32, "max": 4294967295, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
+    {"id": "AUDI_ODO_7E0",      "path": "Trips",  "fmt": { "len": 32, "max": 4000000000,                              "unit": "kilometers" }, "name": "Odometer",                           "suggestedMetric": "odometer"},
+    {"id": "AUDI_ODO",          "path": "Trips",  "fmt": { "len": 32, "max": 4294967295,                              "unit": "kilometers" }, "name": "Odometer",                           "suggestedMetric": "odometer"},
+    {"id": "AUDI_ECM_10E0_RAW", "path": "Engine", "fmt": { "len": 16, "max": 65535,                                   "unit": "scalar"     }, "name": "Engine module 10E0, raw"},
+    {"id": "AUDI_10E0_RAW",     "path": "Engine", "fmt": { "len": 16, "max": 32767,      "min": -32768, "sign": true, "unit": "scalar"     }, "name": "Engine read 10E0, signed raw count"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "10E1"}, "freq": 1,
   "signals": [
@@ -1903,8 +1912,9 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "din": "03", "dbg": true, "cmd": {"22": "115E"}, "freq": 1,
   "signals": [
-    {"id": "AUDI_PQ35_TIME_LAST_REGEN", "fmt":            {      "len": 32, "max": 0.426,                  "div": 10066666667,            "unit": "minutes" },                "name": "Time since last regeneration"},
-    {"id": "AUDI_TIME_SINCE_REGEN",     "path": "Engine", "fmt": {          "len": 32,    "max": 71582788,                     "div": 60,                   "unit": "minutes" },                                      "name": "Time since last regen."}
+    {"id": "AUDI_PQ35_TIME_LAST_REGEN", "fmt":               {      "len": 32, "max": 0.426,                  "div": 10066666667,            "unit": "minutes" },                "name": "Time since last regeneration"},
+    {"id": "AUDI_TIME_SINCE_REGEN_RAW", "path": "Emissions", "fmt": {          "len": 16,    "max": 65535,                                                     "unit": "scalar"  },                                      "name": "Time since particulate filter regeneration, raw count"},
+    {"id": "AUDI_TIME_SINCE_REGEN",     "path": "Engine",    "fmt": {          "len": 32,    "max": 71582788,                     "div": 60,                   "unit": "minutes" },                                      "name": "Time since last regen."}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1160"}, "freq": 30,
   "signals": [
@@ -2056,7 +2066,8 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "11BA"}, "freq": 15,
   "signals": [
-    {"id": "AUDI_OIL_LEVEL", "path": "Engine", "fmt": { "len": 16, "max": 26.2, "div": 2500, "unit": "centimeters" }, "name": "Oil level"}
+    {"id": "AUDI_OIL_LEVEL",   "path": "Engine", "fmt": { "len": 16, "max": 26.2, "div": 2500, "unit": "centimeters" }, "name": "Oil level"},
+    {"id": "AUDI_OIL_LEVEL_2", "path": "Engine", "fmt": { "len": 16, "max": 262,  "div": 250,  "unit": "unknown"     }, "name": "Oil level"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "11BB"}, "freq": 3600,
   "signals": [
@@ -2071,14 +2082,17 @@
   "signals": [
     {"id": "AUDI_EOT_ECM",           "path": "Engine", "fmt": { "len": 16, "max": 200,     "min": -40,      "div": 10,   "add": -273.1,               "unit": "celsius"     }, "name": "Engine oil temperature, engine control module"},
     {"id": "AUDI_PQ35_OIL_LVL_CRIT", "path": "Engine", "fmt": { "len": 16, "max": 131.068, "min": -131.072, "div": 250,                 "sign": true, "unit": "millimeters" }, "name": "Critical engine oil level"},
-    {"id": "AUDI_OIL_LEVEL_WARN",    "path": "Fluids", "fmt": { "len": 16, "max": 26.2,                     "div": 2500,                              "unit": "centimeters" }, "name": "Oil level warning threshold"}
+    {"id": "AUDI_OIL_LEVEL_WARN",    "path": "Fluids", "fmt": { "len": 16, "max": 26.2,                     "div": 2500,                              "unit": "centimeters" }, "name": "Oil level warning threshold"},
+    {"id": "AUDI_ECM_11BD_RAW",      "path": "Engine", "fmt": { "len": 8,  "max": 255,                                                                "unit": "scalar"      }, "name": "Engine module 11BD, raw"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "11BE"}, "freq": 5,
   "signals": [
-    {"id": "AUDI_PQ35_OIL_T_2", "path": "Engine", "fmt": { "len": 16, "max": 6280.4, "min": -273.1, "div": 10, "add": -273.1,                                               "unit": "celsius" }, "name": "Oil temperature variant"},
-    {"id": "AUDI_EOT_V2",       "path": "Engine", "fmt": { "len": 16, "max": 500,    "min": -40,    "div": 10, "add": -273.1,               "nullmin": -40, "nullmax": 500, "unit": "celsius" }, "name": "Engine oil temperature",  "suggestedMetric": "engineOilTemperature"},
-    {"id": "AUDI_EOT_V2",       "path": "Engine", "fmt": { "len": 16, "max": 65535,                                                                                         "unit": "scalar"  }, "name": "Engine oil temperature",  "description": "Scaling is unknown, needs further validation."},
-    {"id": "AUDI_PQ46_OIL_T_2", "path": "Engine", "fmt": { "len": 16, "max": 300,    "min": -40,    "div": 10,                "sign": true,                                 "unit": "celsius" }, "name": "Oil temperature variant", "suggestedMetric": "engineOilTemperature"}
+    {"id": "AUDI_PQ35_OIL_T_2", "path": "Engine", "fmt": { "len": 16, "max": 6280.4, "min": -273.1,  "div": 10, "add": -273.1,                                                "unit": "celsius" }, "name": "Oil temperature variant"},
+    {"id": "AUDI_EOT_V2",       "path": "Engine", "fmt": { "len": 16, "max": 500,    "min": -40,     "div": 10, "add": -273.1,                "nullmin": -40, "nullmax": 500, "unit": "celsius" }, "name": "Engine oil temperature",             "suggestedMetric": "engineOilTemperature"},
+    {"id": "AUDI_11BE_RAW",     "path": "Engine", "fmt": { "len": 16, "max": 32767,  "min": -32768,                             "sign": true,                                 "unit": "scalar"  }, "name": "Engine read 11BE, signed raw count"},
+    {"id": "AUDI_EOT_V2",       "path": "Engine", "fmt": { "len": 16, "max": 65535,                                                                                           "unit": "scalar"  }, "name": "Engine oil temperature",             "description": "Scaling is unknown, needs further validation."},
+    {"id": "AUDI_PQ46_OIL_T_2", "path": "Engine", "fmt": { "len": 16, "max": 6280,   "min": -273.15, "div": 10, "add": -273.15,                                               "unit": "celsius" }, "name": "Oil temperature variant",            "suggestedMetric": "engineOilTemperature"},
+    {"id": "AUDI_ECM_11BE_RAW", "path": "Engine", "fmt": { "len": 8,  "max": 255,                                                                                             "unit": "scalar"  }, "name": "Engine module 11BE, raw"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "11BF"}, "freq": 1,
   "signals": [
@@ -2364,8 +2378,8 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "pri": "17", "fcm1": true, "dbg": true, "cmd": {"22": "1290"}, "freq": 5,
   "signals": [
-    {"id": "AUDI_OXYGEN_SNS_1_BANK_1_CERAMIC_T_7E0", "path": "Engine", "fmt": { "len": 16, "max": 1262.793, "min": -273.15, "mul": 234.37, "div": 10000, "add": -273.15,                     "unit": "celsius" }, "name": "Oxygen sensor 1 bank 1 ceramic temperature"},
-    {"id": "AUDI_OXYGEN_SNS_1_BANK_1_CERAMIC_T",     "path": "Engine", "fmt": { "len": 16, "max": 1262.793, "min": -273.15, "mul": 234.37, "div": 10000, "add": -273.15, "nullmin": -273.15, "unit": "celsius" }, "name": "Oxygen sensor 1 bank 1 ceramic temperature"}
+    {"id": "AUDI_OXYGEN_SNS_1_BANK_1_CERAMIC_T_7E0", "path": "Engine", "fmt": { "len": 16, "max": 1262.793, "min": -273.15, "mul": 234.37, "div": 10000, "add": -273.15,                  "unit": "celsius" }, "name": "Oxygen sensor 1 bank 1 ceramic temperature"},
+    {"id": "AUDI_OXYGEN_SNS_1_BANK_1_CERAMIC_T",     "path": "Engine", "fmt": { "len": 16, "max": 1262.793, "min": -273.15, "mul": 234.37, "div": 10000, "add": -273.15, "nullmin": -273, "unit": "celsius" }, "name": "Oxygen sensor 1 bank 1 ceramic temperature"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1291"}, "freq": 1,
   "signals": [
@@ -3054,12 +3068,14 @@
 { "hdr": "7E0", "rax": "7E8", "din": "03", "dbg": true, "cmd": {"22": "1628"}, "freq": 5,
   "signals": [
     {"id": "AUDI_PQ35_INTERCOOLER_AIR_OUTPUT_T", "path": "Engine", "fmt": { "len": 16, "max": 6280.4, "min": -273.1, "div": 10, "add": -273.1, "unit": "celsius" }, "name": "Intercooler air output temperature"},
+    {"id": "AUDI_INTERCOOLER_AIR_T_RAW",         "path": "Engine", "fmt": { "len": 8,  "max": 255,                                             "unit": "scalar"  }, "name": "Intercooler air temperature, raw count"},
     {"id": "AUDI_INTERCOOLER_AIR_T",             "path": "Engine", "fmt": { "len": 16, "max": 6280,   "min": -273,   "div": 10, "add": -273.1, "unit": "celsius" }, "name": "Intercooler air output temperature"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "162D"}, "freq": 5,
   "signals": [
-    {"id": "AUDI_PQ35_FUEL_T", "path": "Engine", "fmt": { "len": 16, "max": 6280.4, "min": -273.1, "div": 10, "add": -273.1,                                 "unit": "celsius" }, "name": "Fuel temperature"},
-    {"id": "AUDI_FUEL_T_7E0",  "path": "Engine", "fmt": { "len": 16, "max": 300,    "min": -40,    "div": 10, "add": -273.1, "nullmin": -40, "nullmax": 300, "unit": "celsius" }, "name": "Fuel temperature"}
+    {"id": "AUDI_PQ35_FUEL_T", "path": "Engine", "fmt": { "len": 16, "max": 6280.4,     "min": -273.1, "div": 10, "add": -273.1,                                 "unit": "celsius" }, "name": "Fuel temperature"},
+    {"id": "AUDI_162D_RAW",    "path": "Engine", "fmt": { "len": 32, "max": 4294967295,                                                                          "unit": "scalar"  }, "name": "Engine read 162D, raw count"},
+    {"id": "AUDI_FUEL_T_7E0",  "path": "Engine", "fmt": { "len": 16, "max": 300,        "min": -40,    "div": 10, "add": -273.1, "nullmin": -40, "nullmax": 300, "unit": "celsius" }, "name": "Fuel temperature"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1631"}, "freq": 1,
   "signals": [
@@ -3499,7 +3515,8 @@
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "2005"}, "freq": 0.25,
   "signals": [
     {"id": "AUDI_PQ35_BRAKE_BOOSTER_P", "path": "Control", "fmt": { "len": 16, "max": 5434,   "mul": 0.08291753,              "unit": "unknown" }, "name": "Brake booster pressure"},
-    {"id": "AUDI_BRAKE_BST_P",          "path": "Control", "fmt": { "len": 16, "max": 65.535,                    "div": 1000, "unit": "bars"    }, "name": "Brake booster pressure"}
+    {"id": "AUDI_BRAKE_BST_P",          "path": "Control", "fmt": { "len": 16, "max": 65.535,                    "div": 1000, "unit": "bars"    }, "name": "Brake booster pressure"},
+    {"id": "AUDI_ECM_2005_RAW",         "path": "Engine",  "fmt": { "len": 8,  "max": 255,                                    "unit": "scalar"  }, "name": "Engine module 2005, raw"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "2006"}, "freq": 1,
   "signals": [
@@ -4820,7 +4837,8 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "F446"}, "freq": 5,
   "signals": [
-    {"id": "AUDI_AAT_7E0_7E0", "path": "Climate", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Ambient air temperature"}
+    {"id": "AUDI_AAT_7E0_7E0", "path": "Climate", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40,                 "unit": "celsius" }, "name": "Ambient air temperature"},
+    {"id": "AUDI_AAT_7E0_V2",  "path": "Climate", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "nullmax": 215, "unit": "celsius" }, "name": "Ambient air temperature"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "F449"}, "freq": 0.25,
   "signals": [
@@ -4901,26 +4919,28 @@
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "1001"}, "freq": 0.25,
   "signals": [
     {"id": "AUDI_TIRE_FR_SPD_V3",  "path": "Movement", "fmt": { "len": 16, "max": 255,    "div": 10,                  "unit": "kilometersPerHour" }, "name": "Front right wheel speed"},
+    {"id": "AUDI_TCM_1001_RAW",    "path": "Movement", "fmt": { "len": 8,  "max": 255,                                "unit": "scalar"            }, "name": "Transmission read 1001, first byte raw count"},
     {"id": "AUDI_TIRE_FR_SPD_V2",  "path": "Movement", "fmt": { "len": 16, "max": 255,    "div": 10,  "nullmax": 255, "unit": "kilometersPerHour" }, "name": "Front right wheel speed"},
     {"id": "AUDI_TIRE_FR_SPD_7E1", "path": "Movement", "fmt": { "len": 16, "max": 655.35, "div": 100,                 "unit": "kilometersPerHour" }, "name": "Front right wheel speed"}
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "1002"}, "freq": 0.25,
   "signals": [
-    {"id": "AUDI_TIRE_FL_SPD_V3",  "path": "Movement", "fmt": { "len": 16, "max": 255,    "div": 10,                  "unit": "kilometersPerHour" }, "name": "Front left wheel speed"},
-    {"id": "AUDI_TIRE_FL_SPD_7E1", "path": "Movement", "fmt": { "len": 16, "max": 655.35, "div": 100,                 "unit": "kilometersPerHour" }, "name": "Front left wheel speed"},
-    {"id": "AUDI_TIRE_FL_SPD_V3",  "path": "Movement", "fmt": { "len": 16, "max": 255,    "div": 10,  "nullmax": 255, "unit": "kilometersPerHour" }, "name": "Front left wheel speed"}
+    {"id": "AUDI_TIRE_FL_SPD_V3_V2", "path": "Movement", "fmt": { "len": 16, "max": 255,    "div": 10,                  "unit": "kilometersPerHour" }, "name": "Front left wheel speed"},
+    {"id": "AUDI_TIRE_FL_SPD_7E1",   "path": "Movement", "fmt": { "len": 16, "max": 655.35, "div": 100,                 "unit": "kilometersPerHour" }, "name": "Front left wheel speed"},
+    {"id": "AUDI_TIRE_FL_SPD_V3",    "path": "Movement", "fmt": { "len": 16, "max": 255,    "div": 10,  "nullmax": 255, "unit": "kilometersPerHour" }, "name": "Front left wheel speed"}
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "1003"}, "freq": 0.25,
   "signals": [
-    {"id": "AUDI_TIRE_RR_SPD_V3",  "path": "Movement", "fmt": { "len": 16, "max": 255,    "div": 10,                  "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"},
-    {"id": "AUDI_TIRE_RR_SPD_V3",  "path": "Movement", "fmt": { "len": 16, "max": 255,    "div": 10,  "nullmax": 255, "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"},
-    {"id": "AUDI_TIRE_RR_SPD_7E1", "path": "Movement", "fmt": { "len": 16, "max": 655.35, "div": 100,                 "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"}
+    {"id": "AUDI_TIRE_RR_SPD_V3_V2", "path": "Movement", "fmt": { "len": 16, "max": 255,    "div": 10,                  "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"},
+    {"id": "AUDI_TIRE_RR_SPD_V3",    "path": "Movement", "fmt": { "len": 16, "max": 255,    "div": 10,  "nullmax": 255, "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"},
+    {"id": "AUDI_TIRE_RR_SPD_7E1",   "path": "Movement", "fmt": { "len": 16, "max": 655.35, "div": 100,                 "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"}
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "1004"}, "freq": 0.25,
   "signals": [
-    {"id": "AUDI_TIRE_RL_SPD_V3",  "path": "Movement", "fmt": { "len": 16, "max": 255,    "div": 10,                  "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"},
-    {"id": "AUDI_TIRE_RL_SPD_V2",  "path": "Movement", "fmt": { "len": 16, "max": 255,    "div": 10,  "nullmax": 255, "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"},
-    {"id": "AUDI_TIRE_RL_SPD_7E1", "path": "Movement", "fmt": { "len": 16, "max": 655.35, "div": 100,                 "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"}
+    {"id": "AUDI_TIRE_RL_SPD_V3",  "path": "Movement",     "fmt": { "len": 16, "max": 255,    "div": 10,                  "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"},
+    {"id": "AUDI_TIRE_RL_SPD_V2",  "path": "Movement",     "fmt": { "len": 16, "max": 255,    "div": 10,  "nullmax": 255, "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"},
+    {"id": "AUDI_TIRE_RL_SPD_7E1", "path": "Movement",     "fmt": { "len": 16, "max": 655.35, "div": 100,                 "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"},
+    {"id": "AUDI_TCM_1004_RAW",    "path": "Transmission", "fmt": { "len": 16, "max": 65535,                              "unit": "scalar"            }, "name": "Transmission value 1004, raw"}
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "1005"}, "freq": 0.25,
   "signals": [
@@ -4984,7 +5004,7 @@
   "signals": [
     {"id": "AUDI_PQ35_ODO_3",    "path": "Trips", "fmt": { "len": 24, "max": 16777215,                  "unit": "kilometers" },                   "name": "Odometer #3",         "suggestedMetric": "odometer"},
     {"id": "AUDI_ODO_TCM_2",     "path": "Trips", "fmt": { "len": 24, "blsb": true,    "max": 16777215,                      "unit": "kilometers" },                             "name": "Odometer (TCM #2)",   "suggestedMetric": "odometer"},
-    {"id": "AUDI_ODO_MILEAGE_2", "path": "Trips", "fmt": { "len": 16, "max": 65535,                     "unit": "kilometers" },                   "name": "Odometer, mileage 2"}
+    {"id": "AUDI_ODO_MILEAGE_2", "path": "Trips", "fmt": { "len": 24, "max": 16777215,                  "unit": "kilometers" },                   "name": "Odometer, mileage 2"}
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "1021"}, "freq": 0.25,
   "signals": [
@@ -5577,7 +5597,8 @@
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "1196"}, "freq": 5,
   "signals": [
-    {"id": "AUDI_MQB_TCM_HYBRID_T", "path": "Engine", "fmt": { "len": 16, "max": 65535, "unit": "celsius" }, "name": "Hybrid temperature"}
+    {"id": "AUDI_MQB_TCM_HYBRID_T", "path": "Engine", "fmt": { "len": 16, "max": 65535,      "unit": "celsius" }, "name": "Hybrid temperature"},
+    {"id": "AUDI_TCM_1196_RAW",     "path": "Engine", "fmt": { "len": 32, "max": 4294967295, "unit": "scalar"  }, "name": "Transmission read 1196, raw count"}
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "11A7"}, "freq": 1,
   "signals": [
@@ -8194,7 +8215,7 @@
   ]},
 { "hdr": "FC00", "rax": "FE007B", "pri": "17", "tst": "7C", "dbg": true, "cmd": {"22": "086D"}, "freq": 5,
   "signals": [
-    {"id": "AUDI_ODO_V3", "path": "Trips", "fmt": { "len": 32, "max": 4294967295, "unit": "kilometers" }, "name": "Odometer, electric drive", "suggestedMetric": "odometer"}
+    {"id": "AUDI_ODO_V2", "path": "Trips", "fmt": { "len": 32, "max": 4294967295, "unit": "kilometers" }, "name": "Odometer, electric drive", "suggestedMetric": "odometer"}
   ]},
 { "hdr": "FC00", "rax": "FE007B", "pri": "17", "tst": "7C", "dbg": true, "cmd": {"22": "1007"}, "freq": 1,
   "signals": [
