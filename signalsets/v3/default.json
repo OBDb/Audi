@@ -3966,9 +3966,10 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "din": "03", "dbg": true, "cmd": {"22": "295A"}, "freq": 30,
   "signals": [
-    {"id": "AUDI_ODO_MILEAGE", "path": "Trips", "fmt": { "len": 24, "max": 16777215,   "unit": "kilometers" }, "name": "Odometer, mileage"},
-    {"id": "AUDI_ODO_ECM",     "path": "Trips", "fmt": { "len": 24, "max": 16777215,   "unit": "kilometers" }, "name": "Odometer",               "suggestedMetric": "odometer"},
-    {"id": "AUDI_ODO_2",       "path": "Trips", "fmt": { "len": 32, "max": 4294967295, "unit": "kilometers" }, "name": "Odometer (alternative)", "suggestedMetric": "odometer"}
+    {"id": "AUDI_ODO_MILEAGE", "path": "Trips", "fmt": { "len": 24, "max": 16777215,                       "unit": "kilometers" }, "name": "Odometer, mileage"},
+    {"id": "AUDI_ODO_ECM",     "path": "Trips", "fmt": { "len": 24, "max": 16777215,                       "unit": "kilometers" }, "name": "Odometer",               "suggestedMetric": "odometer"},
+    {"id": "AUDI_ODO_2",       "path": "Trips", "fmt": { "len": 32, "max": 4294967295,                     "unit": "kilometers" }, "name": "Odometer (alternative)", "suggestedMetric": "odometer"},
+    {"id": "AUDI_ODO_7E0_2",   "path": "Trips", "fmt": { "len": 24, "max": 16777215,   "nullmax": 1048575, "unit": "kilometers" }, "name": "Odometer",               "suggestedMetric": "odometer"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "295B"}, "freq": 30,
   "signals": [
