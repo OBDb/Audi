@@ -186,7 +186,8 @@
   ]},
 { "hdr": "70F", "rax": "779", "fcm1": true, "dbg": true, "cmd": {"22": "13ED"}, "freq": 0.25,
   "signals": [
-    {"id": "AUDI_CPL_CLU_TQ", "path": "Transmission", "fmt": { "len": 16, "max": 65535, "unit": "percent" }, "name": "Coupling clutch torque"}
+    {"id": "AUDI_CPL_CLU_TQ", "path": "Transmission", "fmt": { "len": 16, "max": 65535, "unit": "scalar"  }, "name": "Coupling clutch torque, raw"},
+    {"id": "AUDI_CLU_TQ",     "path": "Transmission", "fmt": { "len": 16, "max": 65535, "unit": "percent" }, "name": "Clutch torque %"}
   ]},
 { "hdr": "70F", "rax": "779", "fcm1": true, "dbg": true, "cmd": {"22": "1800"}, "freq": 1,
   "signals": [
@@ -425,19 +426,16 @@
   ]},
 { "hdr": "712", "rax": "77C", "fcm1": true, "dbg": true, "cmd": {"22": "1805"}, "freq": 0.25,
   "signals": [
-    {"id": "AUDI_STEER_WHL_TQ_SENS_1", "path": "Tires", "fmt": { "len": 16, "max": 144,      "min": -143,      "mul": 0.004395, "add": 0.06, "sign": true, "unit": "degrees" }, "name": "Steering wheel torque sensor 1"},
-    {"id": "AUDI_STEER_TQ_1",          "path": "Tires", "fmt": { "len": 16, "max": 144.0709, "min": -143.9553, "mul": 0.004395, "add": 0.06, "sign": true, "unit": "degrees" }, "name": "Steering wheel torque sensor 1"}
+    {"id": "AUDI_STEER_WHL_TQ_SENS_1", "path": "Tires", "fmt": { "len": 16, "max": 144, "min": -143, "mul": 0.004395, "add": 0.06, "sign": true, "unit": "degrees" }, "name": "Steering wheel torque sensor 1"}
   ]},
 { "hdr": "712", "rax": "77C", "fcm1": true, "dbg": true, "cmd": {"22": "1806"}, "freq": 0.25,
   "signals": [
-    {"id": "AUDI_STEER_WHL_TQ_SENS_2", "path": "Tires", "fmt": { "len": 16, "max": 144,      "min": -143,      "mul": 0.004395, "add": 0.06, "sign": true, "unit": "degrees" }, "name": "Steering wheel torque sensor 2"},
-    {"id": "AUDI_STEER_TQ_2",          "path": "Tires", "fmt": { "len": 16, "max": 144.0709, "min": -143.9553, "mul": 0.004395, "add": 0.06, "sign": true, "unit": "degrees" }, "name": "Steering wheel torque sensor 2"}
+    {"id": "AUDI_STEER_WHL_TQ_SENS_2", "path": "Tires", "fmt": { "len": 16, "max": 144, "min": -143, "mul": 0.004395, "add": 0.06, "sign": true, "unit": "degrees" }, "name": "Steering wheel torque sensor 2"}
   ]},
 { "hdr": "712", "rax": "77C", "fcm1": true, "dbg": true, "cmd": {"22": "1812"}, "freq": 0.25,
   "signals": [
     {"id": "AUDI_STEER_WHEEL_ANGLE", "path": "Tires", "fmt": { "len": 16, "max": 780,      "min": -750,     "div": 8, "add": -750,               "unit": "degrees" }, "name": "Steering wheel angle"},
-    {"id": "AUDI_MQB_SWA",           "path": "Tires", "fmt": { "len": 16, "max": 4095.935, "min": -4095.94, "div": 8, "add": 0.06, "sign": true, "unit": "degrees" }, "name": "Steering wheel angle"},
-    {"id": "AUDI_STEER_ANGLE_EPS",   "path": "Tires", "fmt": { "len": 16, "max": 4095.875, "min": -4096,    "div": 8,              "sign": true, "unit": "degrees" }, "name": "Steering wheel angle"}
+    {"id": "AUDI_MQB_SWA",           "path": "Tires", "fmt": { "len": 16, "max": 4095.935, "min": -4095.94, "div": 8, "add": 0.06, "sign": true, "unit": "degrees" }, "name": "Steering wheel angle"}
   ]},
 { "hdr": "713", "dbg": true, "cmd": {"22": "2B1B"}, "freq": 30,
   "signals": [
@@ -586,7 +584,7 @@
   ]},
 { "hdr": "714", "dbg": true, "cmd": {"22": "202F"}, "freq": 30,
   "signals": [
-    {"id": "AUDI_EOT_V3",     "path": "Engine", "fmt": { "len": 8, "max": 255,             "add": -58, "unit": "scalar"  }, "name": "Engine oil temperature"},
+    {"id": "AUDI_EOT_V2",     "path": "Engine", "fmt": { "len": 8, "max": 255,             "add": -58, "unit": "scalar"  }, "name": "Engine oil temperature"},
     {"id": "AUDI_PQ35_OIL_T", "path": "Engine", "fmt": { "len": 8, "max": 197, "min": -58, "add": -58, "unit": "celsius" }, "name": "Oil temperature",        "suggestedMetric": "engineOilTemperature"},
     {"id": "AUDI_EOT_714",    "path": "Engine", "fmt": { "len": 8, "max": 197,             "add": -58, "unit": "scalar"  }, "name": "Engine oil temperature"}
   ]},
@@ -1113,10 +1111,12 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "028D"}, "freq": 5,
   "signals": [
-    {"id": "AUDI_ENG_CTRL_MODULE_T",             "path": "Engine", "fmt": { "len": 16, "max": 6280.4, "min": -273.1,  "div": 10, "add": -273.1,               "unit": "celsius" }, "name": "Engine control module temperature"},
-    {"id": "AUDI_ECU_TEMP",                      "path": "Engine", "fmt": { "len": 16, "max": 150,    "min": -40,     "div": 10,                "sign": true, "unit": "celsius" }, "name": "Control module temperature"},
-    {"id": "AUDI_ECU_TEMP_KELVIN",               "path": "Engine", "fmt": { "len": 16, "max": 150,    "min": -40,     "div": 10, "add": -273.1, "sign": true, "unit": "celsius" }, "name": "Control module temperature"},
-    {"id": "AUDI_E_TRON_TRON_ENG_CTRL_MODULE_T", "path": "Engine", "fmt": { "len": 16, "max": 3276.7, "min": -3276.8, "div": 10,                "sign": true, "unit": "celsius" }, "name": "Control module temperature"}
+    {"id": "AUDI_ENG_CTRL_MODULE_T",             "path": "Engine", "fmt": { "len": 16, "max": 6280.4, "min": -273.1,  "div": 10, "add": -273.1,                                  "unit": "celsius" }, "name": "Engine control module temperature"},
+    {"id": "AUDI_ECU_TEMP",                      "path": "Engine", "fmt": { "len": 16, "max": 150,    "min": -40,     "div": 10,                "sign": true,                    "unit": "celsius" }, "name": "Control module temperature"},
+    {"id": "AUDI_ECU_TEMP_KELVIN",               "path": "Engine", "fmt": { "len": 16, "max": 150,    "min": -40,     "div": 10, "add": -273.1, "sign": true,                    "unit": "celsius" }, "name": "Control module temperature"},
+    {"id": "AUDI_E_TRON_TRON_ENG_CTRL_MODULE_T", "path": "Engine", "fmt": { "len": 16, "max": 3276.7, "min": -3276.8, "div": 10,                "sign": true,                    "unit": "celsius" }, "name": "Control module temperature"},
+    {"id": "AUDI_ECM_T",                         "path": "Engine", "fmt": { "len": 16, "max": 6280.4, "min": -273.1,  "div": 10, "add": -273.1,               "nullmin": -273.1, "unit": "celsius" }, "name": "Engine control module temperature"},
+    {"id": "AUDI_ECM_T_RAW",                     "path": "Engine", "fmt": { "len": 16, "max": 65535,                                                                             "unit": "scalar"  }, "name": "Engine control module temperature, raw 16-bit"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "0802"}, "freq": 1,
   "signals": [
@@ -1781,7 +1781,8 @@
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1135"}, "freq": 5,
   "signals": [
     {"id": "AUDI_COOLANT_T",       "path": "Engine", "fmt": { "len": 16, "max": 6280.4, "min": -273.1, "div": 10, "add": -273.1, "unit": "celsius" }, "name": "Coolant temperature at radiator outlet"},
-    {"id": "AUDI_EARLY_COOLANT_T", "path": "Engine", "fmt": { "len": 16, "max": 300,                   "div": 10,                "unit": "celsius" }, "name": "Coolant temperature at radiator outlet"}
+    {"id": "AUDI_EARLY_COOLANT_T", "path": "Engine", "fmt": { "len": 16, "max": 300,                   "div": 10,                "unit": "celsius" }, "name": "Coolant temperature at radiator outlet"},
+    {"id": "AUDI_COOLANT_T_RAW",   "path": "Engine", "fmt": { "len": 16, "max": 65535,                                           "unit": "scalar"  }, "name": "Coolant temperature at radiator outlet, raw"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1136"}, "freq": 1,
   "signals": [
@@ -2085,18 +2086,18 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "11BD"}, "freq": 5,
   "signals": [
-    {"id": "AUDI_EOT_ECM",           "path": "Engine", "fmt": { "len": 16, "max": 200,     "min": -40,      "div": 10,   "add": -273.1,               "unit": "celsius"     }, "name": "Engine oil temperature, engine control module"},
-    {"id": "AUDI_PQ35_OIL_LVL_CRIT", "path": "Engine", "fmt": { "len": 16, "max": 131.068, "min": -131.072, "div": 250,                 "sign": true, "unit": "millimeters" }, "name": "Critical engine oil level"},
-    {"id": "AUDI_OIL_LEVEL_WARN",    "path": "Fluids", "fmt": { "len": 16, "max": 26.2,                     "div": 2500,                              "unit": "centimeters" }, "name": "Oil level warning threshold"},
-    {"id": "AUDI_ECM_11BD_RAW",      "path": "Engine", "fmt": { "len": 8,  "max": 255,                                                                "unit": "scalar"      }, "name": "Engine module 11BD, raw"}
+    {"id": "AUDI_EOT_ECM",           "path": "Engine", "fmt": { "len": 16, "max": 65535,                                               "unit": "scalar"      }, "name": "Engine control module value 11BD, raw 16-bit"},
+    {"id": "AUDI_PQ35_OIL_LVL_CRIT", "path": "Engine", "fmt": { "len": 16, "max": 131.068, "min": -131.072, "div": 250,  "sign": true, "unit": "millimeters" }, "name": "Critical engine oil level"},
+    {"id": "AUDI_OIL_LEVEL_WARN",    "path": "Fluids", "fmt": { "len": 16, "max": 26.2,                     "div": 2500,               "unit": "centimeters" }, "name": "Oil level warning threshold"},
+    {"id": "AUDI_ECM_11BD_RAW",      "path": "Engine", "fmt": { "len": 8,  "max": 255,                                                 "unit": "scalar"      }, "name": "Engine module 11BD, raw"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "11BE"}, "freq": 5,
   "signals": [
     {"id": "AUDI_PQ35_OIL_T_2", "path": "Engine", "fmt": { "len": 16, "max": 6280.4, "min": -273.1,  "div": 10, "add": -273.1,                                                "unit": "celsius" }, "name": "Oil temperature variant"},
-    {"id": "AUDI_EOT_V2",       "path": "Engine", "fmt": { "len": 16, "max": 500,    "min": -40,     "div": 10, "add": -273.1,                "nullmin": -40, "nullmax": 500, "unit": "celsius" }, "name": "Engine oil temperature",             "suggestedMetric": "engineOilTemperature"},
+    {"id": "AUDI_OIL_T_2_RAW",  "path": "Engine", "fmt": { "len": 16, "max": 65535,                                                                                           "unit": "scalar"  }, "name": "Engine control module value 11BE, raw 16-bit"},
+    {"id": "AUDI_EOT_V2",       "path": "Engine", "fmt": { "len": 16, "max": 500,    "min": -40,     "div": 10, "add": -273.1,                "nullmin": -40, "nullmax": 500, "unit": "celsius" }, "name": "Engine oil temperature",                       "suggestedMetric": "engineOilTemperature"},
     {"id": "AUDI_11BE_RAW",     "path": "Engine", "fmt": { "len": 16, "max": 32767,  "min": -32768,                             "sign": true,                                 "unit": "scalar"  }, "name": "Engine read 11BE, signed raw count"},
-    {"id": "AUDI_EOT_V2",       "path": "Engine", "fmt": { "len": 16, "max": 65535,                                                                                           "unit": "scalar"  }, "name": "Engine oil temperature",             "description": "Scaling is unknown, needs further validation."},
-    {"id": "AUDI_PQ46_OIL_T_2", "path": "Engine", "fmt": { "len": 16, "max": 6280,   "min": -273.15, "div": 10, "add": -273.15,                                               "unit": "celsius" }, "name": "Oil temperature variant",            "suggestedMetric": "engineOilTemperature"},
+    {"id": "AUDI_PQ46_OIL_T_2", "path": "Engine", "fmt": { "len": 16, "max": 6280,   "min": -273.15, "div": 10, "add": -273.15,                                               "unit": "celsius" }, "name": "Oil temperature variant",                      "suggestedMetric": "engineOilTemperature"},
     {"id": "AUDI_ECM_11BE_RAW", "path": "Engine", "fmt": { "len": 8,  "max": 255,                                                                                             "unit": "scalar"  }, "name": "Engine module 11BE, raw"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "11BF"}, "freq": 1,
@@ -2137,7 +2138,8 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "11CD"}, "freq": 1,
   "signals": [
-    {"id": "AUDI_TCO_1_SYS", "path": "Engine", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "TCO_1_SYS"}
+    {"id": "AUDI_TCO_1_SYS",     "path": "Engine", "fmt": { "len": 16, "max": 215,   "div": 256, "nullmin": 0, "unit": "celsius" }, "name": "TCO_1_SYS"},
+    {"id": "AUDI_TCO_1_SYS_RAW", "path": "Engine", "fmt": { "len": 16, "max": 65535,                           "unit": "scalar"  }, "name": "TCO_1_SYS, raw 16-bit"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "11CE"}, "freq": 1,
   "signals": [
@@ -2611,8 +2613,8 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "13F2"}, "freq": 1,
   "signals": [
-    {"id": "AUDI_IGA_CYL_KNK_0",      "path": "Engine", "fmt": { "len": 8, "max": 47.625, "min": -48, "mul": 3, "div": 8, "add": -48, "unit": "degrees" }, "name": "IGA_CYL_KNK, 0"},
-    {"id": "AUDI_KNOCK_RETARD_CYL_1", "path": "Engine", "fmt": { "len": 8, "max": 47.62,  "min": -48, "mul": 3, "div": 8, "add": -48, "unit": "degrees" }, "name": "Knock retard:, cylinder 1"}
+    {"id": "AUDI_IGA_CYL_KNK_0",      "path": "Engine", "fmt": { "len": 32, "max": 4294967295,                                             "unit": "scalar"  }, "name": "Engine control module value 13F2, raw 32-bit"},
+    {"id": "AUDI_KNOCK_RETARD_CYL_1", "path": "Engine", "fmt": { "len": 8,  "max": 47.62,      "min": -48, "mul": 3, "div": 8, "add": -48, "unit": "degrees" }, "name": "Knock retard:, cylinder 1"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "13F3"}, "freq": 1,
   "signals": [
@@ -3066,8 +3068,8 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1626"}, "freq": 5,
   "signals": [
-    {"id": "AUDI_PQ35_RADIATOR_OUTPUT_COOLANT_T_ACTUAL", "path": "Engine", "fmt": { "len": 16, "max": 6280.4, "min": -273.1, "div": 10, "add": -273.1, "unit": "celsius" }, "name": "Radiator output coolant temp: actual"},
-    {"id": "AUDI_RADIATOR_OUTPUT_ECT_ACT",               "path": "Engine", "fmt": { "len": 16, "max": 6280,   "min": -273,   "div": 10, "add": -273.1, "unit": "celsius" }, "name": "Radiator output coolant temperature, actual"}
+    {"id": "AUDI_PQ35_RADIATOR_OUTPUT_COOLANT_T_ACTUAL", "path": "Engine", "fmt": { "len": 16, "max": 65535,                                        "unit": "scalar"  }, "name": "Radiator output coolant temp: actual, raw 16-bit"},
+    {"id": "AUDI_RADIATOR_OUTPUT_ECT_ACT",               "path": "Engine", "fmt": { "len": 16, "max": 6280,  "min": -273, "div": 10, "add": -273.1, "unit": "celsius" }, "name": "Radiator output coolant temperature, actual"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "din": "03", "dbg": true, "cmd": {"22": "1628"}, "freq": 5,
   "signals": [
@@ -3078,7 +3080,7 @@
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "162D"}, "freq": 5,
   "signals": [
     {"id": "AUDI_PQ35_FUEL_T", "path": "Engine", "fmt": { "len": 16, "max": 6280.4,     "min": -273.1, "div": 10, "add": -273.1,                                 "unit": "celsius" }, "name": "Fuel temperature"},
-    {"id": "AUDI_162D_RAW",    "path": "Engine", "fmt": { "len": 32, "max": 4294967295,                                                                          "unit": "scalar"  }, "name": "Engine read 162D, raw count"},
+    {"id": "AUDI_FUEL_T_RAW",  "path": "Engine", "fmt": { "len": 32, "max": 4294967295,                                                                          "unit": "scalar"  }, "name": "Engine control module value 162D, raw 32-bit"},
     {"id": "AUDI_FUEL_T_7E0",  "path": "Engine", "fmt": { "len": 16, "max": 300,        "min": -40,    "div": 10, "add": -273.1, "nullmin": -40, "nullmax": 300, "unit": "celsius" }, "name": "Fuel temperature"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1631"}, "freq": 1,
@@ -3305,7 +3307,8 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1798"}, "freq": 5,
   "signals": [
-    {"id": "AUDI_MQB_CHARGE_AIR_T_TUBROCHARGER_OUTLET_CALCULATED", "path": "Battery", "fmt": { "len": 16, "max": 3003.6, "min": -273.1, "mul": 1000, "div": 10000, "add": -273.1, "sign": true, "nullmin": -273.1, "unit": "celsius" }, "name": "Charge air temp at the turbocharger outlet, calculated"}
+    {"id": "AUDI_MQB_CHARGE_AIR_T_TUBROCHARGER_OUTLET_CALCULATED",     "path": "Battery", "fmt": { "len": 16, "max": 3003.6, "min": -273.1, "mul": 1000, "div": 10000, "add": -273.1, "sign": true, "nullmin": -273.1, "unit": "celsius" }, "name": "Charge air temp at the turbocharger outlet, calculated"},
+    {"id": "AUDI_MQB_CHARGE_AIR_T_TUBROCHARGER_OUTLET_CALCULATED_RAW", "path": "Battery", "fmt": { "len": 16, "max": 65535,                                                                                            "unit": "scalar"  }, "name": "Charge air temp at the turbocharger outlet, calculated, raw"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "179C"}, "freq": 5,
   "signals": [
@@ -3779,7 +3782,8 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "20A1"}, "freq": 5,
   "signals": [
-    {"id": "AUDI_PQ35_CALCULATED_OIL_T", "path": "Engine", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Calculated oil temperature"}
+    {"id": "AUDI_PQ35_CALCULATED_OIL_T",        "path": "Engine", "fmt": { "len": 8,  "max": 215,    "min": -40,                "add": -40,               "unit": "celsius" }, "name": "Calculated oil temperature"},
+    {"id": "AUDI_PQ35_CALCULATED_OIL_T_TENTHS", "path": "Engine", "fmt": { "len": 16, "max": 3276.7, "min": -3276.8, "div": 10,             "sign": true, "unit": "celsius" }, "name": "Calculated oil temperature", "suggestedMetric": "engineOilTemperature"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "20A2"}, "freq": 1,
   "signals": [
@@ -5605,8 +5609,9 @@
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "1196"}, "freq": 5,
   "signals": [
-    {"id": "AUDI_MQB_TCM_HYBRID_T", "path": "Engine", "fmt": { "len": 16, "max": 65535,      "unit": "celsius" }, "name": "Hybrid temperature"},
-    {"id": "AUDI_TCM_1196_RAW",     "path": "Engine", "fmt": { "len": 32, "max": 4294967295, "unit": "scalar"  }, "name": "Transmission read 1196, raw count"}
+    {"id": "AUDI_MQB_TCM_HYBRID_T", "path": "Engine", "fmt": { "len": 16, "max": 65535,                                               "unit": "celsius" }, "name": "Hybrid temperature"},
+    {"id": "AUDI_TCM_1196_RAW",     "path": "Engine", "fmt": { "len": 32, "max": 4294967295,                                          "unit": "scalar"  }, "name": "Transmission read 1196, raw count"},
+    {"id": "AUDI_HYBRID_T",         "path": "Engine", "fmt": { "len": 16, "max": 3276.7,     "min": -3276.8, "div": 10, "sign": true, "unit": "celsius" }, "name": "Hybrid temperature"}
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "11A7"}, "freq": 1,
   "signals": [
