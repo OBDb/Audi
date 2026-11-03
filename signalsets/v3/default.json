@@ -622,6 +622,10 @@
     {"id": "AUDI_CABIN_T_V2", "path": "Engine",  "fmt": { "len": 16, "max": 6553,   "div": 10, "unit": "celsius" }, "name": "Cabin temperature"},
     {"id": "AUDI_IAT",        "path": "Engine",  "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "celsius" }, "name": "Cabin temperature"}
   ]},
+{ "hdr": "714", "rax": "77E", "fcm1": true, "dbg": true, "cmd": {"22": "02BD"}, "freq": 30,
+  "signals": [
+    {"id": "AUDI_ODO_V4", "path": "Trips", "fmt": {"bix": 48, "len": 24, "max": 16777215, "nullmax": 16777215, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
+  ]},
 { "hdr": "714", "rax": "77E", "dbg": true, "cmd": {"22": "1014"}, "freq": 5,
   "signals": [
     {"id": "AUDI_AAT",                "path": "Climate", "fmt": { "len": 8, "max": 77.5, "min": -50,             "div": 2, "add": -50, "unit": "celsius" }, "name": "Ambient air temperature", "description": "More testing of this parameter is needed"},
