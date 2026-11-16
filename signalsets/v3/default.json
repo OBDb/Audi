@@ -1193,7 +1193,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "fcm1": true, "dbg": true, "cmd": {"22": "1001"}, "freq": 5,
   "signals": [
-    {"id": "AUDI_IAT_7E0", "path": "Engine", "fmt": { "len": 8, "max": 143, "min": -48, "mul": 3, "div": 4, "add": -48, "unit": "celsius" }, "name": "Intake air temperature"}
+    {"id": "AUDI_IAT_7E0", "path": "Engine", "fmt": { "len": 8, "max": 143, "min": -48, "mul": 3, "div": 4, "add": -48, "unit": "celsius" }, "name": "Intake air temperature", "suggestedMetric": "intakeAirTemperature"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1002"}, "freq": 1,
   "signals": [
@@ -2826,8 +2826,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "pri": "17", "fcm1": true, "dbg": true, "cmd": {"22": "149E"}, "freq": 5,
   "signals": [
-    {"id": "AUDI_INTAKE_AIR_T_IN_INTAKE_MANIFOLD_7E0", "path": "Engine", "fmt": { "len": 8, "max": 143.25, "min": -48, "mul": 0.75, "add": -48, "unit": "celsius" }, "name": "Intake air temperature in intake manifold"},
-    {"id": "AUDI_INTAKE_AIR_T_IN_INTAKE_MANIFOLD",     "path": "Engine", "fmt": { "len": 8, "max": 143.25, "min": -48, "mul": 0.75, "add": -48, "unit": "celsius" }, "name": "Intake air temperature in intake manifold", "suggestedMetric": "intakeAirTemperature"}
+    {"id": "AUDI_INTAKE_AIR_T_IN_INTAKE_MANIFOLD_7E0", "path": "Engine", "fmt": { "len": 8, "max": 143.25, "min": -48, "mul": 0.75, "add": -48, "unit": "celsius" }, "name": "Intake air temperature in intake manifold", "suggestedMetric": "intakeAirTemperature"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "14A1"}, "freq": 0.25,
   "signals": [
@@ -2873,7 +2872,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "14CB"}, "freq": 0.25,
   "signals": [
-    {"id": "AUDI_GEAR_V2", "path": "Transmission", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Gear"}
+    {"id": "AUDI_GEAR_V2", "path": "Transmission", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Gear", "suggestedMetric": "gear"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "14CC"}, "freq": 1,
   "signals": [
@@ -2938,7 +2937,7 @@
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1509"}, "freq": 1,
   "signals": [
     {"id": "AUDI_AMBIENT_AIR_P", "path": "Engine", "fmt": { "len": 16, "max": 262.14, "div": 250, "unit": "unknown"    }, "name": "Ambient air pressure"},
-    {"id": "AUDI_BAROMETRIC_P",  "path": "Engine", "fmt": { "len": 16, "max": 262,    "div": 250, "unit": "kilopascal" }, "name": "Barometric pressure"}
+    {"id": "AUDI_BAROMETRIC_P",  "path": "Engine", "fmt": { "len": 16, "max": 262,    "div": 250, "unit": "kilopascal" }, "name": "Barometric pressure",  "suggestedMetric": "barometricPressure"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1511"}, "freq": 5,
   "signals": [
@@ -3106,10 +3105,10 @@
   "signals": [
     {"id": "AUDI_EOT_MEAS", "path": "Engine", "fmt": { "len": 16, "max": 6280, "min": -273, "div": 10, "add": -273.1, "unit": "celsius" }, "name": "Engine oil temperature measured value", "suggestedMetric": "engineOilTemperature"}
   ]},
-{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1633"}, "freq": 1,
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1633"}, "freq": 0.25,
   "signals": [
-    {"id": "AUDI_LONGITUDINAL_ACCEL_7E0", "path": "Movement", "fmt": { "len": 16, "max": 32.767, "min": -32.768, "div": 1000, "sign": true, "unit": "metersPerSecondSquared" }, "name": "Longitudinal acceleration"},
-    {"id": "AUDI_LONGITUDINAL_ACCEL_V2",  "path": "Movement", "fmt": { "len": 16, "max": 32.76,  "min": -32.76,  "div": 1000, "sign": true, "unit": "metersPerSecondSquared" }, "name": "Longitudinal acceleration"}
+    {"id": "AUDI_LONGITUDINAL_ACCEL_7E0", "path": "Movement", "fmt": { "len": 16, "max": 32.767, "min": -32.768, "div": 1000, "sign": true, "unit": "metersPerSecondSquared" }, "name": "Longitudinal acceleration", "suggestedMetric": "longitudinalAcceleration"},
+    {"id": "AUDI_LONGITUDINAL_ACCEL_V2",  "path": "Movement", "fmt": { "len": 16, "max": 32.76,  "min": -32.76,  "div": 1000, "sign": true, "unit": "metersPerSecondSquared" }, "name": "Longitudinal acceleration", "suggestedMetric": "longitudinalAcceleration"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "din": "03", "dbg": true, "cmd": {"22": "163B"}, "freq": 1,
   "signals": [
@@ -4849,7 +4848,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "F433"}, "freq": 1,
   "signals": [
-    {"id": "AUDI_BARO", "path": "Climate", "fmt": { "len": 8, "max": 255, "unit": "kilopascal" }, "name": "Barometric pressure"}
+    {"id": "AUDI_BARO", "path": "Climate", "fmt": { "len": 8, "max": 255, "unit": "kilopascal" }, "name": "Barometric pressure", "suggestedMetric": "barometricPressure"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "F43C"}, "freq": 5,
   "signals": [
@@ -5773,7 +5772,7 @@
           "10": { "description": "Eighth gear",  "value": "8" }
         }}
     },
-    {"id": "AUDI_GEAR_SHFT", "path": "Transmission", "name": "Shift gear", "fmt": {"len": 8, "map": {
+    {"id": "AUDI_GEAR_SHFT", "path": "Transmission", "name": "Shift gear", "suggestedMetric": "gearSelector", "fmt": {"len": 8, "map": {
           "1": { "description": "Reverse", "value": "REVERSE" },
           "2": { "description": "Park",    "value": "PARK" },
           "3": { "description": "Drive",   "value": "DRIVE" }
@@ -8086,7 +8085,7 @@
   ]},
 { "hdr": "FC00", "rax": "FE0076", "pri": "17", "fcm1": true, "dbg": true, "cmd": {"22": "149E"}, "freq": 5,
   "signals": [
-    {"id": "AUDI_INTAKE_AIR_T_IN_INTAKE_MANIFOLD_V2", "path": "Engine", "fmt": { "len": 8, "max": 143.25, "min": -48, "mul": 0.75, "add": -48, "unit": "celsius" }, "name": "Intake air temperature in intake manifold"}
+    {"id": "AUDI_INTAKE_AIR_T_IN_INTAKE_MANIFOLD", "path": "Engine", "fmt": { "len": 8, "max": 143.25, "min": -48, "mul": 0.75, "add": -48, "unit": "celsius" }, "name": "Intake air temperature in intake manifold", "suggestedMetric": "intakeAirTemperature"}
   ]},
 { "hdr": "FC00", "rax": "FE0076", "pri": "17", "fcm1": true, "dbg": true, "cmd": {"22": "14B4"}, "freq": 30,
   "signals": [
